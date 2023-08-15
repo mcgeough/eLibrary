@@ -1,95 +1,116 @@
-<%-- 
-    Document   : index.jsp
-    Created on : 04-Feb-2023, 20:50:12
-    Author     : mcgeo
---%>
-<%@page import="java.time.LocalDate"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="business.User"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- <a href="https://www.freepnglogos.com/pics/openclipart">Openclipart from freepnglogos.com</a> -->
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src="https://kit.fontawesome.com/b4672bdce5.js" crossorigin="anonymous"></script>
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/landing.css">
+        <link rel="stylesheet" href="css/responsive.css">
         <title>eLibrary</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     </head>
-    <section class="header">
-        <p class="h1">eLibrary</p>
-        <nav class="nav navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="login.jsp">Login</a>
-            <a class="navbar-brand" href="register.jsp">Register</a>
-            <a class="navbar-brand" href="index.jsp">Home</a>
-        </nav>
-    </section>
-    <body class= "d-flex flex-column min-vh-100">
-        <%
-            User u = (User) session.getAttribute("user");
-            if (u == null) {
-                String message = (String) session.getAttribute("msg");
-                if (message != null) {
-                    out.println("<div>" + message + "</div>");
-                    session.removeAttribute("msg");
-                }
+    <body>
 
-            }%>
 
-        <section class="newsletter">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="content">
-                            <div class="input-group col d-flex justify-content-center">
-                                <input type="email" class="form-control" placeholder="Sign up to our newsletter">
-                                <span class="input-group-btn">
-                                    <button class="btn" type="submit">Subscribe Now</button>
-                                </span>
-                            </div>
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg elibrary-navbar elibrary-padding-left elibrary-padding-right">
+            <div class="container-fluid">
+                <div class="elibrary-row">
+                    <!-- left -->
+                    <section class="left d-flex align-items-center">
+                        <a class="navbar-brand" href="#"><img src="css/images/logo.png" alt=""/></a>
+                        <!-- dropdown -->
+                        <div class="elibrary-dropdown-box dropdown">
+                            <button class="elibrary-dropdown dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Browse
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Home</a></li>
+                                <li><a class="dropdown-item" href="#">TV Shows</a></li>
+                                <li><a class="dropdown-item" href="#">Movies</a></li>
+                                <li><a class="dropdown-item" href="#">News and Popular</a></li>
+                                <li><a class="dropdown-item" href="#">My List</a></li>
+                            </ul>
                         </div>
-                    </div>
+                        <!-- tabs -->
+                        <div class="elibrary-nav">
+                            <section>
+                                <button>Home</button>
+                                <button>TV Shows</button>
+                                <button>Movies</button>
+                                <button>New & Popular</button>
+                                <button>My List</button>
+                            </section>
+                        </div>
+                    </section>
+                    <!-- right -->
+                    <section class="right d-flex align-items-center">
+                        <i class="bi bi-search"></i>
+                        <i class="bi bi-bell-fill"></i>
+                        <div class="elibrary-profile">
+
+                        </div>
+                    </section>
                 </div>
-            </div>
-        </section>
-        <section>
-            <div class="card-deck">
-                <div class="card col-sm-4 card">
-                    <img class="card-img-top" src="css/images/game1.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Buy</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
+        </nav>
+        <!-- navbar end -->
+
+
+        <!-- contents -->
+        <div class="">
+            <section class="elibrary-home-video">
+                <div class="top"></div>
+                <div class="bottom"></div>
+                <video src="css/images/showcase.mp4" autoplay muted loop></video>
+                <div class="content">
+                    <section class="left">
+                        <img src="css/images/begin.png" alt="">
+                        <div class="mt-2 d-flex">
+                            <button type="button" class="btn btn-light m-2"><i class="bi bi-stars" style="color: #000;padding: 0px;"></i>Discover Now</button>
+                            <button type="button" class="btn btn-secondary m-2"><i class="bi bi-book" style="padding: 0px;"></i>Browse Genres</button>
+                        </div>
+                    </section>
                 </div>
-                <div class="card col-sm-4 card">
-                    <img class="card-img-top" src="css/images/game2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Sell</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-                <div class="card col-sm-4 card">
-                    <img class="card-img-top" src="css/images/game3.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Reviews</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <jsp:include page="footer.jsp" />
+            </section>
+
+        </div>
+
+
+        <!-- contents end-->
+
+
+
+
+
+        <!-- footer -->
+        <p>footer</p>
+        <!-- footer end-->
+
+
+
+
+
+
+
+
+
+
+        <!<!-- my js file -->
+        <script src="js/javascript.js"></script>
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        -->
     </body>
 </html>
