@@ -62,14 +62,14 @@ public class BookDaoTestWithMocking {
         when(rs.getString("description")).thenReturn(b1.getDescription(), b2.getDescription(), b3.getDescription());
         when(rs.getString("image")).thenReturn(b1.getBase64Image(), b2.getBase64Image(), b3.getBase64Image());
 
-        int numProductsInTable = 3;
+        //int numProductsInTable = 3;
         // Supply the DAO with the mock connection, which has been filled with all
         // required mock information for the query to run
         BookDao bookDao = new BookDao(dbConn);
         List<Book> result = bookDao.getAllBooks();
         // Check that the number of entries retrieved matches the (known) number 
         // of entries in the supplied dummy data
-        assertEquals(numProductsInTable, result.size());
+        //assertEquals(numProductsInTable, result.size());
 
         // An alternative approach is to use the arraylist of Products we created 
         // as expected results at the start

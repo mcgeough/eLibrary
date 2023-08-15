@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2023 at 05:58 AM
+-- Generation Time: Aug 15, 2023 at 11:59 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -34,8 +34,28 @@ CREATE TABLE `books` (
   `ageRating` varchar(3) NOT NULL,
   `price` double NOT NULL,
   `description` varchar(200) NOT NULL,
-  `platform` varchar(15) NOT NULL,
   `image` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `genres`
+--
+
+CREATE TABLE `genres` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `genre_name` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -96,6 +116,18 @@ ALTER TABLE `books`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `genres`
+--
+ALTER TABLE `genres`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
 -- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
@@ -118,6 +150,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `books`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `genres`
+--
+ALTER TABLE `genres`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `reviews`
