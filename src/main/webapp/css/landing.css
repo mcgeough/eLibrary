@@ -141,10 +141,110 @@ i{
 }
 
 .elibrary-home-video .content .left{
-    margin-left: 80px;
+    margin-left: 8px;
 }
 
 .elibrary-home-video .content .left img{
     margin-top: 190px;
     width: 500px;
+}
+.elibrary-home-video .content .right{
+    width: 50px;
+}
+
+.slider1{
+    padding-left: 25px;
+    position: absolute;
+    top: 450px;
+    z-index: 500;
+}
+
+.slider2{
+    padding-left: 25px;
+    position: absolute;
+    top: 800px;
+    z-index: 500;
+}
+
+.slider3{
+    padding-left: 25px;
+    position: absolute;
+    top: 1150px;
+    z-index: 500;
+}
+
+.card{
+    width: 200px;
+    background: #141414;
+    border-radius: 4px;
+    transition: 0.2s linear;
+    margin: 12px;
+    position: relative;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.card-icon{
+    color: #fff;
+    padding:  20px;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.elibrary-card-text{
+    font-size: 12px;
+}
+
+.card-body{
+    display: none;
+    padding: 10px 15px;
+    position: absolute;
+    background-color: #141414;
+    top:120px;
+    width: 100%;
+    z-index: 100 !important;
+}
+
+.card:hover > .card-body{
+    display:block;
+}
+
+.carousel-control-prev{
+    display: none;
+}
+
+.carousel-control-next{
+    display: none;
+}
+
+.tab-change-btn{
+    border: none;
+    width: 30px !important;
+}
+
+.footer{
+    margin-top: 850px;
+    height: 250px;
+}
+
+ul{
+    list-style: none;
+    font-size: 15px;
+    color:rgba(255,255,255,0.646);
+    font-weight: 100;
+}
+
+.copyright{
+    font-size: 15px;
+    font-weight: 200;
+    color: yellow;
+    margin-left: 25px
+}
+
+.footer{
+    margin-bottom: 10px;
 }

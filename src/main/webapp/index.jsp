@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- <a href="https://www.freepnglogos.com/pics/openclipart">Openclipart from freepnglogos.com</a> -->
+        <!-- reference for an image used.. mcgeough.. <a href="https://www.freepnglogos.com/pics/openclipart">Openclipart from freepnglogos.com</a> -->
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,7 +51,7 @@
                     <!-- right -->
                     <section class="right d-flex align-items-center">
                         <i class="bi bi-search"></i>
-                        <i class="bi bi-bell-fill"></i>
+                        <i class="bi bi-cart"></i>
                         <div class="elibrary-profile">
 
                         </div>
@@ -79,28 +79,1154 @@
             </section>
 
         </div>
-
-
         <!-- contents end-->
 
-
+        <!-- slider -->
+        <div class="slider-box">
+            <section class="container-fluid slider1">
+                <div class="d-flex justify-content-between">
+                    <p class="text-white"><b> Trending </b></p>
+                    <div class="">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                </div>
+                <!-- comment -->
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" style="position: relative; overflow: visible;">
+                        <!-- 1st Slide -->
+                        <div class="carousel-item active">
+                            <section class="d-flex" style="position:absolute;">
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                            </section>
+                        </div>
+                        <!-- 2nd Slide -->
+                        <div class="carousel-item">
+                            <section class="d-flex" style="position:absolute;">
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                            </section>
+                        </div>
+                        <!-- 3rd Slide -->
+                        <div class="carousel-item">
+                            <section class="d-flex" style="position:absolute;">
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <!--comment -->
+            </section>
+        </div>
+        <!-- slider end -->
+        <!-- slider -->
+        <div class="slider-box">
+            <section class="container-fluid slider2">
+                <div class="d-flex justify-content-between margin-right margin-title">
+                    <p class="text-white"><b> True Crime </b></p>
+                    <div class="">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                </div>
+                <!-- comment -->
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" style="position: relative; overflow: visible;">
+                        <!-- 1st Slide -->
+                        <div class="carousel-item active">
+                            <section class="d-flex" style="position:absolute;">
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                            </section>
+                        </div>
+                        <!-- 2nd Slide -->
+                        <div class="carousel-item">
+                            <section class="d-flex" style="position:absolute;">
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                            </section>
+                        </div>
+                        <!-- 3rd Slide -->
+                        <div class="carousel-item">
+                            <section class="d-flex" style="position:absolute;">
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <!--comment -->
+            </section>
+        </div>
+        <!-- slider end -->
+        <!-- slider -->
+        <div class="slider-box">
+            <section class="container-fluid slider3">
+                <div class="d-flex justify-content-between margin-right margin-title">
+                    <p class="text-white"><b> Fantasy </b></p>
+                    <div class="">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                </div>
+                <!-- comment -->
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" style="position: relative; overflow: visible;">
+                        <!-- 1st Slide -->
+                        <div class="carousel-item active">
+                            <section class="d-flex" style="position:absolute;">
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                            </section>
+                        </div>
+                        <!-- 2nd Slide -->
+                        <div class="carousel-item">
+                            <section class="d-flex" style="position:absolute;">
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/catch.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                            </section>
+                        </div>
+                        <!-- 3rd Slide -->
+                        <div class="carousel-item">
+                            <section class="d-flex" style="position:absolute;">
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                                <!-- card -->
+                                <div class="card">
+                                    <img src="css/images/harry.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <section class="d-flex justify-content-between">
+                                            <div>
+                                                <i class="bi bi-heart-fill card-icon"></i>
+                                                <i class="bi bi-plus-circle card-icon"></i>
+                                            </div>
+                                            <div>
+                                                <i class="bi bi-cart4"></i>
+                                            </div>
+                                        </section>
+                                        <section class="d-flex justify-content-between">
+                                            <p class="elibrary-card-text m-0" style="color: rgb(0,186,0)"> Avg Rating: 87% </p>
+                                            <span class="elibrary-card-text m-2 text-white">Limited Edition</span>
+                                            <span class="elibrary-card-text m-2 text-white p-1">12+</span>
+                                        </section>
+                                        <p class="m-0 elibrary-card-text text-white">Magical | Fantasy | Heroic</p>
+                                    </div>
+                                </div>
+                                <!-- card end -->
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <!--comment -->
+            </section>
+        </div>
+        <!-- slider end -->
 
 
 
         <!-- footer -->
-        <p>footer</p>
+        <div class="container footer">
+            <div class="row">
+                <div class="col-md-10 mx-auto">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <ul>
+                                <li>Audiobooks</li>
+                                <li>Media</li>
+                                <li>Privacy</li>
+                                <li>Contact Us</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <ul>
+                                <li>Authors Rights</li>
+                                <li>Investors</li>
+                                <li>Terms</li>
+                                <li>Notice</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <ul>
+                                <li>Help Centre</li>
+                                <li>Careers</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <ul>
+                                <li>Organisation</li>
+                                <li>Subscriptions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 mx-auto">
+                    <div class="col-12">
+                        <p class="copyright">@eLibrary powered by <b style="color: #fff">Bootstrap</b></p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
         <!-- footer end-->
 
 
 
-
-
-
-
-
-
-
-        <!<!-- my js file -->
+        <!-- my js file -->
         <script src="js/javascript.js"></script>
         <!-- Optional JavaScript; choose one of the two! -->
 

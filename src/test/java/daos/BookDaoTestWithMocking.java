@@ -26,13 +26,13 @@ public class BookDaoTestWithMocking {
     }
 
     /**
-     * Test of getAllProducts method, of class ProductDao.
+     * Test of getAllBooks of class BookDao.
      *
      * @throws java.sql.SQLException
      * @throws java.io.IOException
      */
     @Test
-    public void testGetAllProducts() throws SQLException, IOException {
+    public void testGetAllBooks() throws SQLException, IOException {
         // Create expected results
         Book b1 = new Book(1, "BookTitle1", "BookGenre1", 12, 9.99, "BookDescription1", "BookImage1");
         Book b2 = new Book(2, "BookTitle2", "BookGenre2", 12, 9.99, "BookDescription2", "BookImage2");
