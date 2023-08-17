@@ -8,3 +8,7 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    $("message").fadeOut(3000);
+});

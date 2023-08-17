@@ -35,12 +35,14 @@ public class LoginCommand implements Command {
                 String error = "Incorrect credentials supplied. Please <a href=\"login.jsp\">try again.</a>";
                 session.setAttribute("errorMessage", error);
             } else {
-                if (u.getIsAdmin()!= 1) {
-                    forwardToJsp = "viewGames.jsp";
+                if (u.getIsAdmin() == 1) {
+                    forwardToJsp = "#";
                     session.setAttribute("user", u);
                 } else {
                     forwardToJsp = "index.jsp";
                     session.setAttribute("user", u);
+                    String msg = "Login Successful";
+                    session.setAttribute("message", msg);
                 }
 
             }

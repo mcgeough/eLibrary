@@ -49,7 +49,7 @@ public class RegisterCommand implements Command {
                 session.setAttribute("username", uname);
                 User u = new User(id, uname, pword, mail, first, last, dob, 0);
                 session.setAttribute("user", u);
-                String msg = "Registration successful, you are now logged in!";
+                String msg = "Registration successful, "+uname+", you are now logged in!";
                 session.setAttribute("msg", msg);
             }
         } else {

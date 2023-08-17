@@ -13,6 +13,16 @@ body{
     width: 100vw;
     position: relative;
 }
+
+.message{
+    color: white;
+}
+
+.message a{
+    color: white;
+    text-decoration: none;
+}
+
 a:link {
     text-decoration: none;
 }
@@ -104,10 +114,11 @@ i{
     font-size: 20px;
     color: #fff;
     padding: 5px 20px;
+    color:yellow;
 }
 
 .elibrary-profile{
-/*    width: 30px;
+/*   width: 30px;
     height:30px;
     background-color: gray;
     border-radius: 4px;

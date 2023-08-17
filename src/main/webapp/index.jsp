@@ -1,3 +1,5 @@
+<%@page import="business.User"%>
+<l<link href="style.css"  type="text/css" rel="stylesheet"   />
 <!doctype html>
 <html lang="en">
     <head>
@@ -14,12 +16,29 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     </head>
     <body>
-
-
-
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg elibrary-navbar elibrary-padding-left elibrary-padding-right">
             <div class="container-fluid">
+                <style type="text/css">
+                    .message{
+                        color: yellow;
+                    }
+                    .logout{
+                        color: yellow;
+                        padding-left: 10px;
+                    }
+                </style> 
+                <%
+                    User u = (User) session.getAttribute("user");
+
+                    if (u != null) {
+                        String msg = (String) session.getAttribute("msg");
+                        if (msg != null) {
+                        
+                            out.println("<div class='text-white'>" + msg + "</div>");
+                            session.removeAttribute("msg");
+                        }
+                %>
                 <div class="elibrary-row">
                     <!-- left -->
                     <section class="left d-flex align-items-center">
@@ -43,15 +62,17 @@
                                 <a href="viewBooks.jsp" style="color: #fff">Books |</a>
                                 <a href="viewBooks.jsp" style="color: #fff">New and Popular |</a>
                                 <a href="viewBooks.jsp" style="color: #fff">My List</a>
+                                <i class="bi bi-person-square"></i>
                             </section>
                         </div>
+                        <div style="color: #fff">Welcome, <%=u.getUsername()%>!</div>
+                        <a href="controller?action=logout" class="logout">Logout</a>
                     </section>
                     <!-- right -->
                     <section class="right d-flex align-items-center">
                         <div class="elibrary-profile">
                             <i class="bi bi-search"></i>
                             <i class="bi bi-cart"></i>
-                            <i class="bi bi-person-square"></i>
                         </div>
                     </section>
                 </div>
@@ -69,8 +90,8 @@
                     <section class="left">
                         <img src="css/images/begin.png" alt="">
                         <div class="mt-2 d-flex">
-                            <button type="button" class="btn btn-light m-2"><i class="bi bi-stars" style="color: #000;padding: 0px;"></i>Discover Now</button>
-                            <button type="button" class="btn btn-secondary m-2"><i class="bi bi-book" style="padding: 0px;"></i>Browse Books</button>
+                            <button type="button" class="btn btn-dark m-2"><i class="bi bi-stars" style="color: yellow;padding: 0px;"></i>Discover Now</button>
+                            <button type="button" class="btn btn-secondary m-2"><i class="bi bi-book" style="padding: 0px;"></i>   Browse Books</button>
                         </div>
                     </section>
                 </div>
@@ -1221,20 +1242,26 @@
 
         </div>
         <!-- footer end-->
+        <%
+        } else {
+        %>
+        <div>Sorry, this page is only for logged-in users. Please <a href="login.jsp">login</a> to continue.
+            <%
+                }
+            %>
 
 
+            <!-- my js file -->
+            <script src="js/javascript.js"></script>
+            <!-- Optional JavaScript; choose one of the two! -->
 
-        <!-- my js file -->
-        <script src="js/javascript.js"></script>
-        <!-- Optional JavaScript; choose one of the two! -->
+            <!-- Option 1: Bootstrap Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-        <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-        <!--
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-        -->
+            <!-- Option 2: Separate Popper and Bootstrap JS -->
+            <!--
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+            -->
     </body>
 </html>

@@ -24,7 +24,7 @@ public class LogoutCommand implements Command {
 
     @Override
     public String execute() {
-        String forwardToJsp = "index.jsp";
+        String forwardToJsp = "login.jsp";
         String message = "You have been logged out.";
         HttpSession session = request.getSession(true);
 

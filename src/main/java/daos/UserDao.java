@@ -85,7 +85,6 @@ public class UserDao extends Dao implements UserDaoInterface {
                 String firstname = rs.getString("firstName");
                 String lastname = rs.getString("lastName");
                 String dob = rs.getString("dob");
-                int isCritic = rs.getInt("isCritic");
                 int isAdmin = rs.getInt("isAdmin");
                 u = new User(id, username, password, email, firstname, lastname, dob, isAdmin);
             }

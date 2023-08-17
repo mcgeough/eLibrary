@@ -9,7 +9,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 body{
     height:100vh;
     background-image: url(images/background.jpg), linear-gradient(#000, #000);
+}
 
+.message{
+    color: white;
+}
+
+.message a{
+    color: yellow;
+    text-decoration: none;
 }
 .login-top{
     width: 100vw;
@@ -48,7 +56,7 @@ body{
 .register-box{
     background-color: rgba(0,0,0,0.667);
     width: 400px;
-    height: 650px;
+    height: 550px;
     border-radius: 5px;
     padding: 50px;
     margin-top: 40px;
