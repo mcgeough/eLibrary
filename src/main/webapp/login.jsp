@@ -10,47 +10,69 @@
         <link rel="stylesheet" href="css/style.css">
         <title>eLibrary</title>
     </head>
-    <body>
-        <div class="login-top">
-            <img src="css/images/logo.png" alt="alt"/>
-        </div>
+    <body>        <%
+        String username = (String) session.getAttribute("username");
+        if (username != null) {
+            String msg = (String) session.getAttribute("msg");
+            if (msg != null) {
+                out.println("<div>" + msg + "</div>");
+                session.removeAttribute("msg");
+            }
+        %>
+        <div><%=username%> : logged in!</div>
+        <%
+        } else {
+        %>
+        <div>Only logged in users can access this page. Please <a href="login.jsp">login</a> to continue.
+            <%
+                }
+            %>
+            <div class="login-top">
+                <img src="css/images/logo.png" alt="alt"/>
+            </div>
 
-        <div class="d-flex justify-content-center align-items-center" style="width: 100vw;">
-            <section class="login-box">
-                <h2 class="text-white">Sign In</h2>
-                <form class="mt-4">
-                    <div class="mb-3 bg-white rounded px-2">
-                        <label for="exampleInputEmail1" class="form-label small-text">Email address</label>
-                        <input type="email" class="form-control border-0 p-0    " id="exampleInputEmail1" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3 bg-white rounded px-2">
-                        <label for="exampleInputPassword1" class="form-label small-text">Password</label>
-                        <input type="password" class="form-control border-0 p-0" id="exampleInputPassword1">
-                    </div>
-                    <button type="submit" class="btn btn-danger mt-3" style="width: 100%;">Sign In</button>
-                    <div class="mb-3 mt-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label text-white small-text" for="exampleCheck1">Remember me</label>
-                    </div>
-                    
-                    <div class="mt-3 d-flex">
-                        <img width="20px" src="css/images/fb.png" alt="alt"/>
-                        <p class="m-0 small-text text-white"> Login with Facebook</p>
-                    </div>
-                </form>
-            </section>
-        </div>
+            <div class="d-flex justify-content-center align-items-center" style="width: 100vw;">
+                <section class="login-box">
+                    <h2 class="text-white">Sign In</h2>
+                    <form class="mt-4" action="controller" method="post">
+                        <div class="mb-3 bg-white rounded px-2">
+                            <label for="exampleInputUsername" class="form-label small-text">Username</label>
+                            <input type="username" class="form-control border-0 p-0" name="username" required>
+                        </div>
+                        <div class="mb-3 bg-white rounded px-2">
+                            <label for="exampleInputPassword1" class="form-label small-text">Password</label>
+                            <input type="password" class="form-control border-0 p-0" name="password" required">
+                        </div>
+                        <button type="submit" class="btn btn-danger mt-3" style="width: 100%;">Sign In</button>
+                        <input type="hidden" name= "action" value="login" />
+                        <div class="mb-3 mt-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label text-white small-text" for="exampleCheck1">Remember me</label>
+                        </div>
+
+                        <div class="mt-3 d-flex">
+                            <img width="20px" src="css/images/fb.png" alt="alt"/>
+                            <p class="m-0 small-text text-white"> Login with Facebook</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <p class="mb-0 me-2 text-white">New here?
+                                <button type="button"  onclick="window.location.href = 'register.jsp';"class="btn btn-danger">Register</button>
+                            </p>
+                        </div>
+                    </form>
+                </section>
+            </div>
 
 
-        <!-- Optional JavaScript; choose one of the two! -->
+            <!-- Optional JavaScript; choose one of the two! -->
 
-        <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            <!-- Option 1: Bootstrap Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-        <!--
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-        -->
+            <!-- Option 2: Separate Popper and Bootstrap JS -->
+            <!--
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+            -->
     </body>
 </html>

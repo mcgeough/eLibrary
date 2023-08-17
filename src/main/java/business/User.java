@@ -1,7 +1,5 @@
 package business;
 
-import java.util.Date;
-
 public class User {
 
     private int id;
@@ -11,10 +9,9 @@ public class User {
     private String firstName;
     private String lastName;
     private String dob;
-    private int isCritic;
     private int isAdmin;
 
-    public User(int id, String username, String password, String email, String firstName, String lastName, String dob, int isCritic, int isAdmin) {
+    public User(int id, String username, String password, String email, String firstName, String lastName, String dob, int isAdmin) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -22,7 +19,6 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
-        this.isCritic = isCritic;
         this.isAdmin = isAdmin;
     }
 
@@ -80,14 +76,6 @@ public class User {
 
     public void setDob(String dob) {
         this.dob = dob;
-    }
-
-    public int getIsCritic() {
-        return isCritic;
-    }
-
-    public void setIsCritic(int isCritic) {
-        this.isCritic = isCritic;
     }
 
     public int getIsAdmin() {

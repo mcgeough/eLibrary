@@ -36,22 +36,18 @@ public class RegisterCommand implements Command {
         System.out.println(last);
         String dob = request.getParameter("dob");
         System.out.println(dob);
-        int isCrit = Integer.valueOf(request.getParameter("critic"));
-        System.out.println(isCrit);
-        int isAd = Integer.valueOf(request.getParameter("admin"));
-        System.out.println(isAd);
 
         if (uname != null && pword != null && !uname.isEmpty() && !pword.isEmpty() && first != null && !first.isEmpty() && last != null && !last.isEmpty()) {
             UserDao userDao = new UserDao("elibrary");
-            int id = userDao.addUser(uname, pword, mail, first, last, dob, isCrit, isAd);
+            int id = userDao.addUser(uname, pword, mail, first, last, dob, 0);
             if (id == -1) {
                 forwardToJsp = "error.jsp";
                 String error = "This user could not be added. Please <a href=\"register.jsp\">try again.</a>";
                 session.setAttribute("errorMessage", error);
             } else {
-                forwardToJsp = "loginSuccessful.jsp";
+                forwardToJsp = "index.jsp";
                 session.setAttribute("username", uname);
-                User u = new User(id, uname, pword, mail, first, last, dob, isCrit, isAd);
+                User u = new User(id, uname, pword, mail, first, last, dob, 0);
                 session.setAttribute("user", u);
                 String msg = "Registration successful, you are now logged in!";
                 session.setAttribute("msg", msg);

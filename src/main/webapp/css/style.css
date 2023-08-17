@@ -19,8 +19,20 @@ body{
     display: flex;
     align-items: center;
 }
+.register-top{
+    width: 100vw;
+    height:70px;
+    background-color: rgba(0,0,0,0);
+    padding:0px 20px;
+    display: flex;
+    align-items: center;
+}
 
 .login-top img{
+    padding-top: 70px;
+    width: 250px;
+}
+.register-top img{
     padding-top: 70px;
     width: 250px;
 }
@@ -32,6 +44,14 @@ body{
     border-radius: 5px;
     padding: 50px;
     margin-top: 80px;
+}
+.register-box{
+    background-color: rgba(0,0,0,0.667);
+    width: 400px;
+    height: 650px;
+    border-radius: 5px;
+    padding: 50px;
+    margin-top: 40px;
 }
 
 .small-text{

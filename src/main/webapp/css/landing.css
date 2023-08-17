@@ -13,6 +13,14 @@ body{
     width: 100vw;
     position: relative;
 }
+a:link {
+    text-decoration: none;
+}
+
+
+a:visited {
+    text-decoration: none;
+}
 
 .elibrary-padding-left{
     padding-left: 57px;
@@ -99,11 +107,11 @@ i{
 }
 
 .elibrary-profile{
-    width: 30px;
+/*    width: 30px;
     height:30px;
     background-color: gray;
     border-radius: 4px;
-    margin-left:20px;
+    margin-left:20px;*/
     cursor: pointer;
 }
 
@@ -162,14 +170,14 @@ i{
 .slider2{
     padding-left: 25px;
     position: absolute;
-    top: 800px;
+    top: 850px;
     z-index: 500;
 }
 
 .slider3{
     padding-left: 25px;
     position: absolute;
-    top: 1150px;
+    top: 1250px;
     z-index: 500;
 }
 

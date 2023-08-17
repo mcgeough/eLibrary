@@ -39,9 +39,8 @@ public class UserDao extends Dao implements UserDaoInterface {
                 String firstname = rs.getString("firstName");
                 String lastname = rs.getString("lastName");
                 String dob = rs.getString("dob");
-                int isCritic = rs.getInt("isCritic");
                 int isAdmin = rs.getInt("isAdmin");
-                User u = new User(id, username, password, email, firstname, lastname, dob, isCritic, isAdmin);
+                User u = new User(id, username, password, email, firstname, lastname, dob, isAdmin);
                 users.add(u);
             }
         } catch (SQLException e) {
@@ -88,7 +87,7 @@ public class UserDao extends Dao implements UserDaoInterface {
                 String dob = rs.getString("dob");
                 int isCritic = rs.getInt("isCritic");
                 int isAdmin = rs.getInt("isAdmin");
-                u = new User(id, username, password, email, firstname, lastname, dob, isCritic, isAdmin);
+                u = new User(id, username, password, email, firstname, lastname, dob, isAdmin);
             }
         } catch (SQLException e) {
             System.out.println("An error occurred in the findUserByUsernamePassword() method: " + e.getMessage());
@@ -132,9 +131,8 @@ public class UserDao extends Dao implements UserDaoInterface {
                 String firstname = rs.getString("firstName");
                 String lastname = rs.getString("lastName");
                 String dob = rs.getString("dob");
-                int isCritic = rs.getInt("isCritic");
                 int isAdmin = rs.getInt("isAdmin");
-                u = new User(userId, username, password, email, firstname, lastname, dob, isCritic, isAdmin);
+                u = new User(userId, username, password, email, firstname, lastname, dob, isAdmin);
             }
         } catch (SQLException e) {
             System.out.println("An error occurred in the findUserById() method: " + e.getMessage());
@@ -157,7 +155,7 @@ public class UserDao extends Dao implements UserDaoInterface {
     }
 
     @Override
-    public int addUser(String uname, String pword, String email, String fName, String lName, String dob, int isCrit, int isAd) {
+    public int addUser(String uname, String pword, String email, String fName, String lName, String dob, int isAd) {
         Connection con = null;
         PreparedStatement ps = null;
         // This will be used to hold the generated ID (i.e. the value auto-generated
@@ -170,7 +168,7 @@ public class UserDao extends Dao implements UserDaoInterface {
         try {
             con = this.getConnection();
 
-            String query = "INSERT INTO users(username, password, email, firstname, lastname, dob, isCritic, isAdmin) VALUES (?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO users(username, password, email, firstname, lastname, dob, isAdmin) VALUES (?,?,?,?,?,?,?)";
 
             // Need to get the id back, so have to tell the database to return the id it generates
             // That is why we include the Statement.RETURN_GENERATED_KEYS parameter
@@ -182,8 +180,7 @@ public class UserDao extends Dao implements UserDaoInterface {
             ps.setString(4, fName);
             ps.setString(5, lName);
             ps.setString(6, dob);
-            ps.setInt(7, isCrit);
-            ps.setInt(8, isAd);
+            ps.setInt(7, isAd);
 
             // Because this is CHANGING the database, use the executeUpdate method
             ps.executeUpdate();

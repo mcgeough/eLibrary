@@ -30,9 +30,8 @@
                                 Browse
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Home</a></li>
-                                <li><a class="dropdown-item" href="#">TV Shows</a></li>
-                                <li><a class="dropdown-item" href="#">Movies</a></li>
+                                <li><a class="dropdown-item" href="index.jsp">Home</a></li>
+                                <li><a class="dropdown-item" href="viewBooks.jsp">Books</a></li>
                                 <li><a class="dropdown-item" href="#">News and Popular</a></li>
                                 <li><a class="dropdown-item" href="#">My List</a></li>
                             </ul>
@@ -40,20 +39,19 @@
                         <!-- tabs -->
                         <div class="elibrary-nav">
                             <section>
-                                <button>Home</button>
-                                <button>TV Shows</button>
-                                <button>Movies</button>
-                                <button>New & Popular</button>
-                                <button>My List</button>
+                                <a href="index.jsp" style="color: #fff">Home |</a>
+                                <a href="viewBooks.jsp" style="color: #fff">Books |</a>
+                                <a href="viewBooks.jsp" style="color: #fff">New and Popular |</a>
+                                <a href="viewBooks.jsp" style="color: #fff">My List</a>
                             </section>
                         </div>
                     </section>
                     <!-- right -->
                     <section class="right d-flex align-items-center">
-                        <i class="bi bi-search"></i>
-                        <i class="bi bi-cart"></i>
                         <div class="elibrary-profile">
-
+                            <i class="bi bi-search"></i>
+                            <i class="bi bi-cart"></i>
+                            <i class="bi bi-person-square"></i>
                         </div>
                     </section>
                 </div>
@@ -72,7 +70,7 @@
                         <img src="css/images/begin.png" alt="">
                         <div class="mt-2 d-flex">
                             <button type="button" class="btn btn-light m-2"><i class="bi bi-stars" style="color: #000;padding: 0px;"></i>Discover Now</button>
-                            <button type="button" class="btn btn-secondary m-2"><i class="bi bi-book" style="padding: 0px;"></i>Browse Genres</button>
+                            <button type="button" class="btn btn-secondary m-2"><i class="bi bi-book" style="padding: 0px;"></i>Browse Books</button>
                         </div>
                     </section>
                 </div>
@@ -1220,7 +1218,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <!-- footer end-->
 
