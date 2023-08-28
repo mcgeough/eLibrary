@@ -118,11 +118,11 @@ i{
 }
 
 .elibrary-profile{
-/*   width: 30px;
-    height:30px;
-    background-color: gray;
-    border-radius: 4px;
-    margin-left:20px;*/
+    /*   width: 30px;
+        height:30px;
+        background-color: gray;
+        border-radius: 4px;
+        margin-left:20px;*/
     cursor: pointer;
 }
 
@@ -266,4 +266,9 @@ ul{
 
 .footer{
     margin-bottom: 10px;
+}
+
+.table{
+    width: 100vw;
+    position: relative;
 }

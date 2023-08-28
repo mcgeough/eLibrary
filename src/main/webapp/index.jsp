@@ -76,6 +76,7 @@
                         </div>
                     </section>
                 </div>
+            </div>
         </nav>
         <!-- navbar end -->
 
@@ -1245,7 +1246,7 @@
         <%
         } else {
         %>
-        <div>Sorry, this page is only for logged-in users. Please <a href="login.jsp">login</a> to continue.
+        <div class='text-white'>Sorry, this page is only for logged-in users. Please <a href="login.jsp">login</a> to continue.
             <%
                 }
             %>

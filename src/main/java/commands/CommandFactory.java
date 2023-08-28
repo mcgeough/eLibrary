@@ -19,6 +19,12 @@ public class CommandFactory {
                 case "logout":
                     c = new LogoutCommand(request, response);
                     break;
+                case "addUser":
+                    c = new AddUserCommand(request, response);
+                    break;
+                case "deleteUser":
+                    c = new DeleteUserCommand(request, response);
+                    break;
 
                 default:
                     String error = "No such action defined for this application. Please try again.";
