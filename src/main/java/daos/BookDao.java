@@ -28,14 +28,12 @@ public class BookDao extends Dao implements BookDaoInterface {
     }
 
     /**
-     * Returns a list of {@code Product} objects based on information in the
-     * database. All product entries in the Products table are selected from the
-     * database and stored as {@code Product} objects in a
-     * {@code java.util.List}.
+     * Returns a list of {@code Book} objects based on information in the
+     * database. All product entries in the Books table are selected from the
+     * database and stored as {@code Books} objects in a {@code java.util.List}.
      *
-     * @return The {@code List} of all product entries in the Product table.
-     * This {@code List} may be empty where no products are present in the
-     * database.
+     * @return The {@code List} of all product entries in the Books table. This
+     * {@code List} may be empty where no products are present in the database.
      * @see java.util.List
      */
     @Override
@@ -80,7 +78,7 @@ public class BookDao extends Dao implements BookDaoInterface {
     /**
      * Searches for a product entry matching the code supplied as a parameter.
      *
-     * @param code The id of the Product to be found in the database.
+     * @param id The id of the Product to be found in the database.
      * @return The {@code Product} contained in the database matching the
      * supplied product code, or {@code null} otherwise.
      */
@@ -122,54 +120,53 @@ public class BookDao extends Dao implements BookDaoInterface {
         return b;
     }
 
+    /**
+     *
+     * Amends the name of any product in the database matching the specified
+     * code.Updates all products in the database matching the supplied
+     * id, where id is the primary key.
+     *
+     * This method should update at most one row in the database.
+     *
+     * @param id The code of the product to be amended
+     *
+     * @param newBookPrice The price to which this book should be changed.
+     * @return The number of product entries changed in the books table.
+     */
+    @Override
+    public int updateBookPrice(int id, Double newBookPrice) {
+        Connection con = null;
+        PreparedStatement ps = null;
+        int rowsAffected = 0;
 
-//    /**
-//     *
-//     * Amends the name of any product in the database matching the specified
-//     * code.
-//     *
-//     * Updates all products in the database matching the supplied productCode,
-//     * where productCode is the primary key. This method should update at most
-//     * one row in the database.
-//     *
-//     * @param productCode The code of the product to be amended
-//     * @param newProductName The name to which this product should be changed.
-//     * @return The number of product entries changed in the Product table.
-//     */
-//    @Override
-//    public int updateProductName(String productCode, String newProductName) {
-//        Connection con = null;
-//        PreparedStatement ps = null;
-//        int rowsAffected = 0;
-//
-//        try {
-//            con = getConnection();
-//
-//            String query = "UPDATE Products SET productName = ? WHERE productCode = ?";
-//
-//            ps = con.prepareStatement(query);
-//            ps.setString(1, newProductName);
-//            ps.setString(2, productCode);
-//
-//            rowsAffected = ps.executeUpdate();
-//
-//        } catch (SQLException e) {
-//            System.out.println("Exception occured in the updateProductName() method: " + e.getMessage());
-//        } finally {
-//            try {
-//                if (ps != null) {
-//                    ps.close();
-//                }
-//                if (con != null) {
-//                    freeConnection(con);
-//                }
-//            } catch (SQLException e) {
-//                System.out.println("Exception occured in the finally section of the updateProductName() method");
-//                e.getMessage();
-//            }
-//        }
-//
-//        return rowsAffected;
-//    }
-//    
+        try {
+            con = getConnection();
+
+            String query = "UPDATE books SET price = ? WHERE id = ?";
+
+            ps = con.prepareStatement(query);
+            ps.setDouble(1, newBookPrice);
+            ps.setInt(2, id);
+
+            rowsAffected = ps.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println("Exception occured in the updateBookPrice() method: " + e.getMessage());
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                System.out.println("Exception occured in the finally section of the updateBookPrice() method");
+                e.getMessage();
+            }
+        }
+
+        return rowsAffected;
+    }
+
 }

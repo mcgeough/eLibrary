@@ -5,9 +5,9 @@ sideLinks.forEach(item => {
     item.addEventListener('click', () => {
         sideLinks.forEach(i => {
             i.parentElement.classList.remove('active');
-        })
+        });
         li.classList.add('active');
-    })
+    });
 });
 
 const menuBar = document.querySelector('.content nav .bx.bx-menu');

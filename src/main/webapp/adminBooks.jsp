@@ -1,3 +1,8 @@
+<%-- 
+    Document   : adminBooks
+    Created on : 29-Aug-2023, 08:53:48
+    Author     : mcgeo
+--%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="daos.UserDao"%>
 <%@page import="business.User"%>
@@ -34,8 +39,9 @@
         <div class="sidebar">
             <ul class="side-menu">
                 <li><a href="index.jsp"><i class='bx bx-store-alt'></i>Shop</a></li>
-                <li><a href="#"><i class='bx bx-message-square-dots'></i>Books</a></li>
-                <li><a href="#"><i class='bx bx-group'></i>Users</a></li>
+                <li><a href="adminBooks.jsp"><i class='bx bx-message-square-dots'></i>Books</a></li>
+                <li><a href="adminUsers"><i class='bx bx-group'></i>Users</a></li>
+                <li><a href="adminUsers"><i class='bx bx-group'></i>Orders</a></li>
             </ul>
             <ul class="side-menu">
                 <li>
@@ -87,15 +93,14 @@
                             <h3>Current Users</h3>
                         </div>
                         <table>
-                            <caption>List of users</caption>
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>USERNAME</th>
-                                    <th>FIRST NAME</th>
-                                    <th>LAST NAME</th>
                                     <th>DOB</th>
                                     <th>EMAIL</th>
+                                    <th>FIRST NAME</th>
+                                    <th>LAST NAME</th>
                                     <th>ADMIN</th>
                                 </tr>
                             </thead>
@@ -105,19 +110,18 @@
                                         for (User user : users) {
                                     %>
 
-                                    <td style='padding-top:35px; padding-right: 20px; '><p>ELIB009-
-                                            <%=user.getId()%></p></td>
+                                    <td><p><%=user.getId()%></p></td>
                                     <td><%=user.getUsername()%></td>
-                                    <td><%=user.getFirstName()%></td>
-                                    <td><%=user.getLastName()%></td>
                                     <td><%=user.getDob()%></td>
                                     <td><%=user.getEmail()%></td>
+                                    <td><%=user.getFirstName()%></td>
+                                    <td><%=user.getLastName()%></td>
                                     <td><%=user.getIsAdmin()%></td>
                                     <td><button type="button" class="btn btn-primary btn-sm">View</button></td>
                                     <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
                                 </tr>
                                 <%
-                                    }
+                                        }
                                 %>
                             </tbody>
                         </table>
@@ -131,11 +135,9 @@
 
         <script src="js/adminIndex.js"></script>
 
-        <%
-        } else {
-        %>
 
-        <%
+        <%} else {
+
             }
         %>
     </body>

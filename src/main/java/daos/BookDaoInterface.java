@@ -16,5 +16,7 @@ public interface BookDaoInterface {
     public List<Book> getAllBooks();
 
     public Book getBookById(String id);
+    
+    public int updateBookPrice(int id, Double newBookPrice);
 
 }

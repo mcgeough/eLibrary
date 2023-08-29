@@ -1,3 +1,9 @@
+<%-- 
+    Document   : adminUsers
+    Created on : 29-Aug-2023, 08:54:18
+    Author     : mcgeo
+--%>
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="daos.UserDao"%>
 <%@page import="business.User"%>
@@ -87,15 +93,14 @@
                             <h3>Current Users</h3>
                         </div>
                         <table>
-                            <caption>List of users</caption>
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>USERNAME</th>
-                                    <th>FIRST NAME</th>
-                                    <th>LAST NAME</th>
                                     <th>DOB</th>
                                     <th>EMAIL</th>
+                                    <th>FIRST NAME</th>
+                                    <th>LAST NAME</th>
                                     <th>ADMIN</th>
                                 </tr>
                             </thead>
@@ -105,13 +110,12 @@
                                         for (User user : users) {
                                     %>
 
-                                    <td style='padding-top:35px; padding-right: 20px; '><p>ELIB009-
-                                            <%=user.getId()%></p></td>
+                                    <td><p><%=user.getId()%></p></td>
                                     <td><%=user.getUsername()%></td>
-                                    <td><%=user.getFirstName()%></td>
-                                    <td><%=user.getLastName()%></td>
                                     <td><%=user.getDob()%></td>
                                     <td><%=user.getEmail()%></td>
+                                    <td><%=user.getFirstName()%></td>
+                                    <td><%=user.getLastName()%></td>
                                     <td><%=user.getIsAdmin()%></td>
                                     <td><button type="button" class="btn btn-primary btn-sm">View</button></td>
                                     <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
@@ -131,7 +135,7 @@
 
         <script src="js/adminIndex.js"></script>
 
-        <%
+
         } else {
         %>
 
@@ -141,3 +145,4 @@
     </body>
 
 </html>
+

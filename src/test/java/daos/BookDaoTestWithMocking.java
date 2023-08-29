@@ -82,4 +82,16 @@ public class BookDaoTestWithMocking {
             System.out.println(b);
         }
     }
+
+    /**
+     * Test of updateBookPrice of class BookDao.
+     *
+     * @throws java.sql.SQLException
+     * @throws java.io.IOException
+     */
+    @Test
+    public void testUpdateBookPrice() throws SQLException, IOException {
+        
+        
+    }
 }
