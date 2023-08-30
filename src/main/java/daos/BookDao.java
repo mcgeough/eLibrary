@@ -51,7 +51,7 @@ public class BookDao extends Dao implements BookDaoInterface {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                Book b = new Book(rs.getInt("id"), rs.getString("title"), rs.getString("genre"), rs.getInt("ageRating"), rs.getDouble("price"), rs.getString("productDescription"), rs.getString("image"));
+                Book b = new Book(rs.getInt("id"), rs.getString("title"), rs.getString("genre"), rs.getInt("ageRating"), rs.getDouble("price"), rs.getString("description"), rs.getString("image"));
                 books.add(b);
             }
         } catch (SQLException e) {
@@ -98,7 +98,7 @@ public class BookDao extends Dao implements BookDaoInterface {
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                b = new Book(rs.getInt("id"), rs.getString("title"), rs.getString("genre"), rs.getInt("ageRating"), rs.getDouble("price"), rs.getString("productDescription"), rs.getString("image"));
+                b = new Book(rs.getInt("id"), rs.getString("title"), rs.getString("genre"), rs.getInt("ageRating"), rs.getDouble("price"), rs.getString("description"), rs.getString("image"));
             }
         } catch (SQLException e) {
             System.out.println("Exception occured in the getBookById() method: " + e.getMessage());

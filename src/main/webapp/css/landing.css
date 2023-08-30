@@ -26,6 +26,7 @@ a:link {
     text-decoration: none;
 }
 
+.card {display:inline-block;}
 
 a:visited {
     text-decoration: none;
