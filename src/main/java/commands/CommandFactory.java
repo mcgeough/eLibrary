@@ -25,6 +25,9 @@ public class CommandFactory {
                 case "deleteUser":
                     c = new DeleteUserCommand(request, response);
                     break;
+                case "viewUser":
+                    c = new ViewUserCommand(request, response);
+                    break;
 
                 default:
                     String error = "No such action defined for this application. Please try again.";

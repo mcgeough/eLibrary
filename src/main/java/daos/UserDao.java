@@ -63,7 +63,7 @@ public class UserDao extends Dao implements UserDaoInterface {
         return users;     // may be empty
     }
 
-    public User findUserByUsernamePassword(String uname, String pword) {
+    public User findUserByUsername(String uname, String pword) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -71,10 +71,9 @@ public class UserDao extends Dao implements UserDaoInterface {
         try {
             con = this.getConnection();
 
-            String query = "SELECT * FROM users WHERE username = ? AND password = ?";
+            String query = "SELECT * FROM users WHERE username = ?";
             ps = con.prepareStatement(query);
             ps.setString(1, uname);
-            ps.setString(2, pword);
 
             rs = ps.executeQuery();
             if (rs.next()) {
@@ -89,7 +88,7 @@ public class UserDao extends Dao implements UserDaoInterface {
                 u = new User(id, username, password, email, firstname, lastname, dob, isAdmin);
             }
         } catch (SQLException e) {
-            System.out.println("An error occurred in the findUserByUsernamePassword() method: " + e.getMessage());
+            System.out.println("An error occurred in the findUserByUsername() method: " + e.getMessage());
         } finally {
             try {
                 if (rs != null) {
@@ -102,7 +101,7 @@ public class UserDao extends Dao implements UserDaoInterface {
                     freeConnection(con);
                 }
             } catch (SQLException e) {
-                System.out.println("An error occurred when shutting down the findUserByUsernamePassword() method: " + e.getMessage());
+                System.out.println("An error occurred when shutting down the findUserByUsername method: " + e.getMessage());
             }
         }
         return u;     // u may be null 

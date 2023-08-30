@@ -4,6 +4,7 @@
  */
 package commands;
 
+import Bcrypt.BCrypt;
 import business.User;
 import daos.UserDao;
 import javax.servlet.http.HttpServletRequest;
@@ -36,10 +37,12 @@ public class RegisterCommand implements Command {
         System.out.println(last);
         String dob = request.getParameter("dob");
         System.out.println(dob);
+        String hashed_password = BCrypt.hashpw(pword, BCrypt.gensalt(12)); // 12 log rounds of complexity
+        boolean verify_password = BCrypt.checkpw(pword, hashed_password);
 
-        if (uname != null && pword != null && !uname.isEmpty() && !pword.isEmpty() && first != null && !first.isEmpty() && last != null && !last.isEmpty()) {
+        if (uname != null && pword != null && !uname.isEmpty() && !pword.isEmpty() && first != null && !first.isEmpty() && last != null && !last.isEmpty() && verify_password == true) {
             UserDao userDao = new UserDao("elibrary");
-            int id = userDao.addUser(uname, pword, mail, first, last, dob, 0);
+            int id = userDao.addUser(uname, hashed_password, mail, first, last, dob, 0);
             if (id == -1) {
                 forwardToJsp = "error.jsp";
                 String error = "This user could not be added. Please <a href=\"register.jsp\">try again.</a>";
@@ -47,9 +50,9 @@ public class RegisterCommand implements Command {
             } else {
                 forwardToJsp = "index.jsp";
                 session.setAttribute("username", uname);
-                User u = new User(id, uname, pword, mail, first, last, dob, 0);
+                User u = new User(id, uname, hashed_password, mail, first, last, dob, 0);
                 session.setAttribute("user", u);
-                String msg = "Registration successful, "+uname+", you are now logged in!";
+                String msg = "Registration successful, " + uname + ", you are now logged in!";
                 session.setAttribute("msg", msg);
             }
         } else {

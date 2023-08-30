@@ -35,7 +35,6 @@
             <ul class="side-menu">
                 <li><a href="index.jsp"><i class='bx bx-store-alt'></i>Shop</a></li>
                 <li><a href="#"><i class='bx bx-message-square-dots'></i>Books</a></li>
-                <li><a href="#"><i class='bx bx-group'></i>Users</a></li>
             </ul>
             <ul class="side-menu">
                 <li>
@@ -104,21 +103,25 @@
                                     <%
                                         for (User user : users) {
                                     %>
-
-                                    <td style='padding-top:35px; padding-right: 20px; '><p>ELIB009-
-                                            <%=user.getId()%></p></td>
-                                    <td><%=user.getUsername()%></td>
-                                    <td><%=user.getFirstName()%></td>
-                                    <td><%=user.getLastName()%></td>
-                                    <td><%=user.getDob()%></td>
-                                    <td><%=user.getEmail()%></td>
-                                    <td><%=user.getIsAdmin()%></td>
-                                    <td><button type="button" class="btn btn-primary btn-sm">View</button></td>
+                            <form action="controller" method="get">
+                                <div>
+                                    <td style='padding-top:35px; padding-right: 20px;'>ELIB009-<%=user.getId()%></td>
+                                    <input type="hidden" name=cust_id value="<%=user.getId()%>">
+                                </div>
+                                <td><%=user.getUsername()%></td>
+                                <td><%=user.getFirstName()%></td>
+                                <td><%=user.getLastName()%></td>
+                                <td><%=user.getDob()%></td>
+                                <td><%=user.getEmail()%></td>
+                                <td><%=user.getIsAdmin()%></td>
+                                <div>
+                                    <td><button type="submit" name=action value="viewUser"class= "btn btn-primary btn-sm">View</button></td>
                                     <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
-                                </tr>
-                                <%
-                                    }
-                                %>
+                                    </tr>
+                            </form>
+                            <%
+                                }
+                            %>
                             </tbody>
                         </table>
                     </div> 

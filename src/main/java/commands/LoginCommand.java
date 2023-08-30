@@ -4,8 +4,10 @@
  */
 package commands;
 
+import Bcrypt.BCrypt;
 import business.User;
 import daos.UserDao;
+import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,10 +28,12 @@ public class LoginCommand implements Command {
         HttpSession session = request.getSession(true);
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String hashed_password = BCrypt.hashpw(password, BCrypt.gensalt(12)); // 12 log rounds of complexity
+        boolean verify_password = BCrypt.checkpw(password, hashed_password);
 
-        if (username != null && password != null && !username.isEmpty() && !password.isEmpty()) {
+        if (username != null && password != null && !username.isEmpty() && !password.isEmpty() && verify_password == true) {
             UserDao userDao = new UserDao("elibrary");
-            User u = userDao.findUserByUsernamePassword(username, password);
+            User u = userDao.findUserByUsername(username, hashed_password);
             if (u == null) {
                 forwardToJsp = "error.jsp";
                 String error = "Incorrect credentials supplied. Please <a href=\"login.jsp\">try again.</a>";
@@ -37,6 +41,7 @@ public class LoginCommand implements Command {
             } else {
                 if (u.getIsAdmin() == 1) {
                     forwardToJsp = "adminIndex.jsp";
+                    session.setAttribute("user", u);
                     session.setAttribute("user", u);
                 } else {
                     forwardToJsp = "index.jsp";
