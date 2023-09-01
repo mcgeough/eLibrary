@@ -10,6 +10,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="css/adminStyle.css">
+        <link rel="stylesheet" href="css/responsive.css">
         <title>Admin Dashboard | eLibrary</title>
     </head>
     <%
@@ -103,26 +104,26 @@
                                     <%
                                         for (User user : users) {
                                     %>
-                            <form action="controller" method="get">
-                                <div>
-                                    <td style='padding-top:35px; padding-right: 20px;'>ELIB009-<%=user.getId()%></td>
-                                    <input type="hidden" name=cust_id value="<%=user.getId()%>">
-                                </div>
-                                <td><%=user.getUsername()%></td>
-                                <td><%=user.getFirstName()%></td>
-                                <td><%=user.getLastName()%></td>
-                                <td><%=user.getDob()%></td>
-                                <td><%=user.getEmail()%></td>
-                                <td><%=user.getIsAdmin()%></td>
-                                <div>
-                                    <td><button type="submit" name=action value="viewUser"class= "btn btn-primary btn-sm">View</button></td>
-                                    <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
-                                    </tr>
-                            </form>
-                            <%
-                                }
-                            %>
-                            </tbody>
+
+                            <div>
+                                <td style='padding-top:35px; padding-right: 20px;'>ELIB009-<%=user.getId()%></td>
+                                <input type="hidden" name=cust_id value="<%=user.getId()%>">
+                            </div>
+                            <td><%=user.getUsername()%></td>
+                            <td><%=user.getFirstName()%></td>
+                            <td><%=user.getLastName()%></td>
+                            <td><%=user.getDob()%></td>
+                            <td><%=user.getEmail()%></td>
+                            <td><%=user.getIsAdmin()%></td>
+                            <div>
+                                <td><a href="adminViewUser.jsp?detailsID=<%=user.getId()%>"/>Edit</a></td>
+                                <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
+                                </tr>
+
+                                <%
+                                    }
+                                %>
+                                </tbody>
                         </table>
                     </div> 
 

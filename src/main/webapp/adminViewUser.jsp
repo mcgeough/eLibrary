@@ -15,23 +15,22 @@
     <body>
         <%
             // Check if the user is currently logged in
-            User u = (User) session.getAttribute("user");
-            String uid = request.getParameter("cust_id");
-            int id = Integer.parseInt(uid);
-            if (u != null) {
+            User admin = (User) session.getAttribute("user");
+            UserDao userDao = new UserDao("elibrary");
+            String cID = request.getParameter("detailsID");
+            int dID = Integer.parseInt(cID);
+            User current_user = userDao.findUserById(dID);
+            if (current_user != null) {
                 // If they are logged in, then continue
-                int userID = u.getId();
+                
                 // If an id was supplied
-                if (userID != -1) {
+                if (current_user.getId() != -1) {
                     try {
-                        // Get the appropriate User from the database
-                        UserDao userDao = new UserDao("elibrary");
-                        User user = userDao.findUserById(id);
+
                         // If a user matching that name is found
-                        if (u != null) {
-                            // Display user's information
-                            // Use a formatter to provide internationalisation on the numeric data
-%>
+                        if (current_user != null) {
+
+        %>
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg elibrary-navbar elibrary-padding-left elibrary-padding-right">
             <div class="container-fluid">
@@ -71,7 +70,7 @@
                                 <a href="userDetails.jsp"><i class="bi bi-person-square"></i></a>
                             </section>
                         </div>
-                        <div style="color: #fff">Welcome <%=u.getUsername()%> !</div>
+                        <div style="color: #fff">Welcome <%=admin.getUsername()%> !</div>
                         <a href="controller?action=logout" class="logout">Logout</a>
                     </section>
                 </div>
@@ -93,12 +92,12 @@
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row"><%=u.getId()%></th>
-                    <td><%=u.getUsername()%></td>
-                    <td><%=u.getFirstName()%></td>
-                    <td><%=u.getLastName()%></td>
-                    <td><%=u.getDob()%></td>
-                    <td><%=u.getEmail()%></td>
+                    <th scope="row"><%=current_user.getId()%></th>
+                    <td><%=current_user.getUsername()%></td>
+                    <td><%=current_user.getFirstName()%></td>
+                    <td><%=current_user.getLastName()%></td>
+                    <td><%=current_user.getDob()%></td>
+                    <td><%=current_user.getEmail()%></td>
                 </tr>
             </tbody>
         </table>
@@ -133,7 +132,11 @@
 
         <!-- Option 1: Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script><!-- comment -->
 
+
+
+        </script>
         <!-- Option 2: Separate Popper and Bootstrap JS -->
         <!--
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
