@@ -21,7 +21,7 @@
             String msg = (String) session.getAttribute("msg");
             if (msg != null) {
 
-                out.println("<div class='text-white'>" + msg + "</div>");
+                out.println("<div>" + msg + "</div>");
                 session.removeAttribute("msg");
             }
             UserDao userDao = new UserDao("eLibrary");
@@ -36,7 +36,7 @@
         <div class="sidebar">
             <ul class="side-menu">
                 <li><a href="index.jsp"><i class='bx bx-store-alt'></i>Shop</a></li>
-                <li><a href="#"><i class='bx bx-message-square-dots'></i>Books</a></li>
+                <li><a href="viewBooks.jsp"><i class='bx bx-message-square-dots'></i>Books</a></li>
             </ul>
             <ul class="side-menu">
                 <li>
@@ -143,7 +143,7 @@
         <%
         } else {
         %>
-
+        <div style="color: yellow;">No users added.</div>
         <%
             }
         %>

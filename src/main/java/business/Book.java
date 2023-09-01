@@ -4,6 +4,7 @@
  */
 package business;
 
+import java.io.File;
 import java.util.Objects;
 
 /**
@@ -18,15 +19,15 @@ public class Book {
     private int ageRating;
     private double price;
     private String description;
-    private String base64Image;
+    private String image;
 
-    public Book(int id, String title, String genre, int ageRating, double price, String description, String base64Image) {
+    public Book(int id, String title, String genre, int ageRating, double price, String description, String image) {
         this.id = id;
         this.title = title;
         this.genre = genre;
         this.ageRating = ageRating;
         this.price = price;
-        this.base64Image = base64Image;
+        this.image = image;
     }
 
     public int getId() {
@@ -77,13 +78,10 @@ public class Book {
         this.description = description;
     }
 
-    public String getBase64Image() {
-        return base64Image;
+    public String image() {
+        return image;
     }
 
-    public void setBase64Image(String base64Image) {
-        this.base64Image = base64Image;
-    }
 
     @Override
     public int hashCode() {
@@ -94,7 +92,7 @@ public class Book {
         hash = 31 * hash + this.ageRating;
         hash = 31 * hash + (int) (Double.doubleToLongBits(this.price) ^ (Double.doubleToLongBits(this.price) >>> 32));
         hash = 31 * hash + Objects.hashCode(this.description);
-        hash = 31 * hash + Objects.hashCode(this.base64Image);
+        hash = 31 * hash + Objects.hashCode(this.image);
         return hash;
     }
 
@@ -128,12 +126,12 @@ public class Book {
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        return Objects.equals(this.base64Image, other.base64Image);
+        return Objects.equals(this.image, other.image);
     }
 
     @Override
     public String toString() {
-        return "Book{" + "id=" + id + ", title=" + title + ", genre=" + genre + ", ageRating=" + ageRating + ", price=" + price + ", description=" + description + ", base64Image=" + base64Image + '}';
+        return "Book{" + "id=" + id + ", title=" + title + ", genre=" + genre + ", ageRating=" + ageRating + ", price=" + price + ", description=" + description + ", image=" + image + '}';
     }
 
 }

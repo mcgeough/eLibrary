@@ -5,6 +5,7 @@
 package daos;
 
 import business.Book;
+import java.io.File;
 import java.util.List;
 
 /**
@@ -16,7 +17,9 @@ public interface BookDaoInterface {
     public List<Book> getAllBooks();
 
     public Book getBookById(String id);
-    
+
     public boolean deleteBook(String id);
+
+    public int addBook(String title, String genre, int ageRating, double price, String description, String image);
 
 }
