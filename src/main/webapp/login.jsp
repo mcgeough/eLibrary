@@ -21,29 +21,31 @@
                 <h2 class="text-white">Sign In</h2>
                 <form class="mt-4" action="controller" method="post">
                     <div class="mb-3 bg-white rounded px-2">
-                        <label for="exampleInputUsername" class="form-label small-text">Username</label>
+                        <label class="form-label small-text">Username</label>
                         <input type="username" class="form-control border-0 p-0" name="username" required>
                     </div>
                     <div class="mb-3 bg-white rounded px-2">
-                        <label for="exampleInputPassword1" class="form-label small-text">Password</label>
+                        <label class="form-label small-text">Password</label>
                         <input type="password" class="form-control border-0 p-0" name="password" required">
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-danger mt-3" style="width: 100%;">Sign In</button>
+                        <button type="submit" class="btn btn-danger mt-3" style="width: 100%">Sign In</button>
                         <input type="hidden" name= "action" value="login"/>
                     </div>
                     <div class="mb-3 mt-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label text-white small-text" for="exampleCheck1">Remember me</label>
                     </div>
+                    <a class="forgot_password 
+                       " href="#!">Forgot password?</a>
 
                     <div class="mt-3 d-flex">
                         <img width="20px" src="css/images/fb.png" alt="alt"/>
                         <p class="m-0 small-text text-white"> Login with Facebook</p>
                     </div>
-                    <div class="d-flex align-items-center justify-content-center">
+                    <div class="d-flex align-items-center justify-content-center"style="padding-top: 30px;">
                         <p class="mb-0 me-2 text-white">New here?
-                            <button type="button"  onclick="window.location.href = 'register.jsp';"class="btn btn-danger">Register</button>
+                            <button type="button"  onclick="window.location.href = 'register.jsp';"class="btn btn-danger btn-sm">Register</button>
                         </p>
                     </div>
                 </form>

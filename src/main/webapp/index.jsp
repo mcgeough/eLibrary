@@ -94,7 +94,7 @@
                 <div class="content">
                     <section class="left">
                         <img src="css/images/begin.png" alt="">
-                        <div class="mt-2 d-flex"><
+                        <div class="mt-2 d-flex">
                             <a href="viewBooks.jsp" class="btn btn-secondary m-2"><i class="bi bi-book" style="padding: 0px;" ></i>   Browse Books</a>
                         </div>
                     </section>

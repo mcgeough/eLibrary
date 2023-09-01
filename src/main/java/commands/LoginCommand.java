@@ -7,7 +7,6 @@ package commands;
 import Bcrypt.BCrypt;
 import business.User;
 import daos.UserDao;
-import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -28,26 +27,32 @@ public class LoginCommand implements Command {
         HttpSession session = request.getSession(true);
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String hashed_password = BCrypt.hashpw(password, BCrypt.gensalt(12)); // 12 log rounds of complexity
-        boolean verify_password = BCrypt.checkpw(password, hashed_password);
 
-        if (username != null && password != null && !username.isEmpty() && !password.isEmpty() && verify_password == true) {
+        if (username != null && password != null && !username.isEmpty() && !password.isEmpty()) {
             UserDao userDao = new UserDao("elibrary");
-            User u = userDao.findUserByUsername(username, hashed_password);
+            User u = userDao.findUserByUsername(username, password);
+
             if (u == null) {
                 forwardToJsp = "error.jsp";
                 String error = "Incorrect credentials supplied. Please <a href=\"login.jsp\">try again.</a>";
                 session.setAttribute("errorMessage", error);
             } else {
-                if (u.getIsAdmin() == 1) {
-                    forwardToJsp = "adminIndex.jsp";
-                    session.setAttribute("user", u);
-                    session.setAttribute("user", u);
+                boolean isAuthenticated = BCrypt.checkpw(password, u.getPassword()); //causes null pointer exception before if(u == null)
+                if (!isAuthenticated && !username.contentEquals(u.getUsername())) {
+                    forwardToJsp = "error.jsp";
+                    String error = "Incorrect credentials supplied. Please <a href=\"login.jsp\">try again.</a>";
+                    session.setAttribute("errorMessage", error);
                 } else {
-                    forwardToJsp = "index.jsp";
-                    session.setAttribute("user", u);
-                    String msg = "Login Successful";
-                    session.setAttribute("message", msg);
+                    if (u.getIsAdmin() == 1) {
+                        forwardToJsp = "adminIndex.jsp";
+                        session.setAttribute("user", u);
+                        session.setAttribute("user", u);
+                    } else {
+                        forwardToJsp = "index.jsp";
+                        session.setAttribute("user", u);
+                        String msg = "Login Successful";
+                        session.setAttribute("message", msg);
+                    }
                 }
 
             }

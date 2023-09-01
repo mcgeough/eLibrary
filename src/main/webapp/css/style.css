@@ -6,6 +6,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Created on : 15-Aug-2023, 12:28:43
     Author     : mcgeo
 */
+.forgot_password{
+    text-decoration: none;
+}
+
+a {
+    color: white;
+}
 body{
     height:100vh;
     background-image: url(images/background.jpg), linear-gradient(#000, #000);
@@ -41,7 +48,7 @@ body{
     width: 250px;
 }
 .register-top img{
-    padding-top: 70px;
+    padding-top: 0px;
     width: 250px;
 }
 
@@ -56,10 +63,10 @@ body{
 .register-box{
     background-color: rgba(0,0,0,0.667);
     width: 400px;
-    height: 550px;
+    height: 600px;
     border-radius: 5px;
     padding: 50px;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .small-text{

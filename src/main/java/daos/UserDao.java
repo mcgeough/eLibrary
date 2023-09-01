@@ -1,5 +1,6 @@
 package daos;
 
+import Bcrypt.BCrypt;
 import business.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -63,7 +64,7 @@ public class UserDao extends Dao implements UserDaoInterface {
         return users;     // may be empty
     }
 
-    public User findUserByUsername(String uname, String pword) {
+    public User findUserByUsername(String uname, String Upassword) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -79,13 +80,17 @@ public class UserDao extends Dao implements UserDaoInterface {
             if (rs.next()) {
                 int id = rs.getInt("user_id");
                 String username = rs.getString("username");
-                String password = rs.getString("password");
-                String email = rs.getString("email");
-                String firstname = rs.getString("firstName");
-                String lastname = rs.getString("lastName");
-                String dob = rs.getString("dob");
-                int isAdmin = rs.getInt("isAdmin");
-                u = new User(id, username, password, email, firstname, lastname, dob, isAdmin);
+                if (!BCrypt.checkpw(Upassword, rs.getString("Password"))) {
+                    return null;
+                } else {
+                    String password = rs.getString("password");
+                    String email = rs.getString("email");
+                    String firstname = rs.getString("firstName");
+                    String lastname = rs.getString("lastName");
+                    String dob = rs.getString("dob");
+                    int isAdmin = rs.getInt("isAdmin");
+                    u = new User(id, username, password, email, firstname, lastname, dob, isAdmin);
+                }
             }
         } catch (SQLException e) {
             System.out.println("An error occurred in the findUserByUsername() method: " + e.getMessage());

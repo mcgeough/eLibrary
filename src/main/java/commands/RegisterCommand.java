@@ -29,6 +29,8 @@ public class RegisterCommand implements Command {
         System.out.println(uname);
         String pword = request.getParameter("password");
         System.out.println(pword);
+        String pword2 = request.getParameter("password2");
+        System.out.println(pword2);
         String mail = request.getParameter("email");
         System.out.println(mail);
         String first = request.getParameter("firstName");
@@ -39,8 +41,9 @@ public class RegisterCommand implements Command {
         System.out.println(dob);
         String hashed_password = BCrypt.hashpw(pword, BCrypt.gensalt(12)); // 12 log rounds of complexity
         boolean verify_password = BCrypt.checkpw(pword, hashed_password);
+        System.out.println(verify_password);
 
-        if (uname != null && pword != null && !uname.isEmpty() && !pword.isEmpty() && first != null && !first.isEmpty() && last != null && !last.isEmpty() && verify_password == true) {
+        if (uname != null && pword != null && !uname.isEmpty() && !pword.isEmpty() && first != null && !first.isEmpty() && last != null && !last.isEmpty() && verify_password == true && pword.contentEquals(pword2)) {
             UserDao userDao = new UserDao("elibrary");
             int id = userDao.addUser(uname, hashed_password, mail, first, last, dob, 0);
             if (id == -1) {

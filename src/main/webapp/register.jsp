@@ -29,6 +29,10 @@
                         <input type="password" class="form-control border-0 p-0" name="password"  required>
                     </div>
                     <div class="col-md-14 text-white">
+                        <label for="exampleInputPassword1" class="form-label small-text">Repeat Password</label>
+                        <input type="password" class="form-control border-0 p-0" name="password2"  required>
+                    </div>
+                    <div class="col-md-14 text-white">
                         <label for="exampleInputPassword1" class="form-label small-text">Email</label>
                         <input type="email" class="form-control border-0 p-0"name="email" required>
                     </div>
@@ -49,10 +53,10 @@
                     </div>
                     <button type="submit" class="btn btn-danger mt-3" style="width: 100%;">Register</button>
                     <input type="hidden" name= "action" value="register" />
-                    <a class="text-white" href="#!">Forgot password?</a>
-                    <div class="d-flex align-items-center justify-content-center pb-4">
+
+                    <div class="d-flex align-items-center justify-content-center pb-4"style="padding-top: 20px;">
                         <p class="mb-0 me-2 text-white">Already have an account?
-                            <button type="button"  onclick="window.location.href = 'login.jsp';"class="btn btn-danger">Login here</button>
+                            <button type="button"  onclick="window.location.href = 'login.jsp';"class="btn btn-danger btn-sm border-dark">Login here</button>
                         </p>
                     </div>
                 </form>
