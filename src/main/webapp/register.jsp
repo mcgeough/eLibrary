@@ -66,7 +66,7 @@
         <%
             User u = (User) session.getAttribute("user");
 
-            if (u == null) {
+            if (u != null) {
                 String msg = (String) session.getAttribute("msg");
                 if (msg != null) {
 

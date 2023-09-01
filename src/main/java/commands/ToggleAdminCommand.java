@@ -4,28 +4,27 @@
  */
 package commands;
 
+import Bcrypt.BCrypt;
+import business.User;
+import daos.UserDao;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class ViewUserCommand implements Command {
+public class ToggleAdminCommand implements Command {
 
-    private final HttpServletRequest request;
+    private HttpServletRequest request;
     private HttpServletResponse response;
 
-    public ViewUserCommand(HttpServletRequest request, HttpServletResponse response) {
+    public ToggleAdminCommand(HttpServletRequest request, HttpServletResponse response) {
         this.request = request;
         this.response = response;
+
     }
 
     @Override
     public String execute() {
-        String forwardToJsp = "adminViewUser.jsp";
-        HttpSession session = request.getSession(true);
-        String userID = request.getParameter("cust_id");
-        int id = Integer.parseInt(userID);
-        session.setAttribute("userID", id);
-        return forwardToJsp;
+        return null;
     }
 
 }

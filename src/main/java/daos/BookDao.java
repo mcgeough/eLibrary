@@ -46,7 +46,7 @@ public class BookDao extends Dao implements BookDaoInterface {
         try {
             con = getConnection();
 
-            String query = "Select * from books";
+            String query = "SELECT * FROM books";
             ps = con.prepareStatement(query);
             rs = ps.executeQuery();
 
@@ -92,7 +92,7 @@ public class BookDao extends Dao implements BookDaoInterface {
         try {
             con = getConnection();
 
-            String query = "Select * from books where id = ?";
+            String query = "SELECT * FROM users WHERE id = ?";
             ps = con.prepareStatement(query);
             ps.setString(1, id);
             rs = ps.executeQuery();
@@ -123,8 +123,8 @@ public class BookDao extends Dao implements BookDaoInterface {
     /**
      *
      * Amends the name of any product in the database matching the specified
-     * code.Updates all products in the database matching the supplied
-     * id, where id is the primary key.
+     * code.Updates all products in the database matching the supplied id, where
+     * id is the primary key.
      *
      * This method should update at most one row in the database.
      *
@@ -133,27 +133,37 @@ public class BookDao extends Dao implements BookDaoInterface {
      * @param newBookPrice The price to which this book should be changed.
      * @return The number of product entries changed in the books table.
      */
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////update user
+    /**
+     * Deletes a {@code Book} object based on information in the database.An
+     * entry in the Books table is selected from the database and deleted.
+     *
+     * @param id
+     * @return The {@code rowDeleted} boolean variable if user is deleted .
+     * @see java.util.List
+     */
     @Override
-    public int updateBookPrice(int id, Double newBookPrice) {
+    public boolean deleteBook(String id) {
+        boolean rowDeleted = false;
         Connection con = null;
         PreparedStatement ps = null;
-        int rowsAffected = 0;
-
+        ResultSet rs = null;
         try {
             con = getConnection();
-
-            String query = "UPDATE books SET price = ? WHERE id = ?";
-
+            String query = "DELETE FROM users WHERE id = ?";
             ps = con.prepareStatement(query);
-            ps.setDouble(1, newBookPrice);
-            ps.setInt(2, id);
-
-            rowsAffected = ps.executeUpdate();
-
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                rowDeleted = true;
+            }
         } catch (SQLException e) {
-            System.out.println("Exception occured in the updateBookPrice() method: " + e.getMessage());
+            System.out.println("Exception occured in the deleteUser() method: " + e.getMessage());
         } finally {
             try {
+                if (rs != null) {
+                    rs.close();
+                }
                 if (ps != null) {
                     ps.close();
                 }
@@ -161,12 +171,10 @@ public class BookDao extends Dao implements BookDaoInterface {
                     freeConnection(con);
                 }
             } catch (SQLException e) {
-                System.out.println("Exception occured in the finally section of the updateBookPrice() method");
-                e.getMessage();
+                System.out.println("Exception occured in the finally section of the deleteUser() method: " + e.getMessage());
             }
         }
-
-        return rowsAffected;
+        return rowDeleted;
     }
 
 }

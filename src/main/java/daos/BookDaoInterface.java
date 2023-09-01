@@ -17,6 +17,6 @@ public interface BookDaoInterface {
 
     public Book getBookById(String id);
     
-    public int updateBookPrice(int id, Double newBookPrice);
+    public boolean deleteBook(String id);
 
 }

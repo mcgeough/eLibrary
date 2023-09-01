@@ -24,11 +24,14 @@ public class CommandFactory {
                     break;
                 case "deleteUser":
                     c = new DeleteUserCommand(request, response);
+                    break; 
+                case "updateUser":
+                    c = new UpdateUserCommand(request, response);
+                    break; 
+                case "toggleAdmin":
+                    c = new ToggleAdminCommand(request, response);
                     break;
-                case "viewUser":
-                    c = new ViewUserCommand(request, response);
-                    break;
-
+                
                 default:
                     String error = "No such action defined for this application. Please try again.";
                     c = new ErrorCommand(error, request);

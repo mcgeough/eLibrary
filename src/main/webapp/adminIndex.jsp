@@ -1,6 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="daos.UserDao"%>
 <%@page import="business.User"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -107,7 +108,6 @@
 
                             <div>
                                 <td style='padding-top:35px; padding-right: 20px;'>ELIB009-<%=user.getId()%></td>
-                                <input type="hidden" name=cust_id value="<%=user.getId()%>">
                             </div>
                             <td><%=user.getUsername()%></td>
                             <td><%=user.getFirstName()%></td>
@@ -116,8 +116,13 @@
                             <td><%=user.getEmail()%></td>
                             <td><%=user.getIsAdmin()%></td>
                             <div>
-                                <td><a href="adminViewUser.jsp?detailsID=<%=user.getId()%>"/>Edit</a></td>
-                                <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
+                                <td><a class="btn btn-primary btn-sm" href="adminViewUser.jsp?detailsID=<%=user.getId()%>"/>Details</a></td>
+                                <form action="controller" method="post">
+                                    <input type='hidden' name='action' value='deleteUser'/>    
+                                    <input type='hidden' name='deleteID' value='<%=user.getId()%>'/>    
+                                    <td><input class="btn btn-mini btn-danger" type="submit" name='deleteUser' value="Delete"/></td>
+                                </form>
+
                                 </tr>
 
                                 <%

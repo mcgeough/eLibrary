@@ -18,11 +18,18 @@
             User admin = (User) session.getAttribute("user");
             UserDao userDao = new UserDao("elibrary");
             String cID = request.getParameter("detailsID");
-            int dID = Integer.parseInt(cID);
-            User current_user = userDao.findUserById(dID);
+            System.out.println(cID);
+            User current_user = null;
+            try {
+                int dID = Integer.parseInt(cID);
+                current_user = userDao.findUserById(dID);
+            } catch (NumberFormatException ex) {
+                System.out.println(ex);
+            }
+
             if (current_user != null) {
                 // If they are logged in, then continue
-                
+
                 // If an id was supplied
                 if (current_user.getId() != -1) {
                     try {
@@ -78,7 +85,7 @@
         </nav>
         <!-- navbar end -->
 
-        <h3>Your details.</h3>
+        <h3 style="padding-top: 25px;padding-left: 25px;padding-bottom: 10px;">user ELIB009<%=current_user.getId()%> details:</h3>
         <table class="table">
             <thead>
                 <tr>
@@ -98,6 +105,7 @@
                     <td><%=current_user.getLastName()%></td>
                     <td><%=current_user.getDob()%></td>
                     <td><%=current_user.getEmail()%></td>
+                    <td><a class="btn btn-primary btn-sm" href="controller?action=toggleAdmin?detailsID=<%=current_user.getId()%>"/>Toggle Admin Role</a></td>
                 </tr>
             </tbody>
         </table>
