@@ -14,13 +14,13 @@ public class Cart {
     
     private int cartID;
     private User user;
-    private ArrayList<Book> books;
-    private static int idCount = 1000;
+    private ArrayList<Cart> items;
+    private static int idCount = 0;
 
-    public Cart(User user, ArrayList<Book> books) {
+    public Cart(User user, ArrayList<Cart> items) {
         this.cartID = ++idCount;    
         this.user = user;
-        this.books = books;
+        this.items = items;
     }
     
     

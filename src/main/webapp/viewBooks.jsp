@@ -29,7 +29,7 @@
 
                 try {
 
-                    // If a books were found
+                    // If books were found
                     if (books != null) {
 
 

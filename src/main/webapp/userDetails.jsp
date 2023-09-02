@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/adminStyle.css">
         <link rel="stylesheet" href="css/landing.css">
+        <link rel="stylesheet" href="css/responsive.css">
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <title>eLibrary | User Details</title>
@@ -17,12 +18,7 @@
             // Check if the user is currently logged in
             User user = (User) session.getAttribute("user");
             UserDao userDao = new UserDao("elibrary");
-            try {
                 user = userDao.findUserById(user.getId());
-            } catch (NumberFormatException ex) {
-                System.out.println(ex);
-            }
-
             if (user != null) {
                 // If they are logged in, then continue
 

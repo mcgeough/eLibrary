@@ -4,6 +4,7 @@
  */
 package commands;
 
+import business.User;
 import daos.UserDao;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +24,9 @@ public class SaveCommand implements Command {
     public String execute() {
         String forwardToJsp = "index.jsp";
         HttpSession session = request.getSession(true);
-        int uid = Integer.parseInt(request.getParameter("user_id"));
+        UserDao userDao = new UserDao("elibrary");
+        String cID = request.getParameter("updateID");
+        int ID = Integer.getInteger(cID);
         String uname = request.getParameter("username");
         System.out.println(uname);
         String mail = request.getParameter("email");
@@ -34,8 +37,7 @@ public class SaveCommand implements Command {
         System.out.println(last);
 
         if (uname != null && !uname.isEmpty() && first != null && !first.isEmpty() && last != null && !last.isEmpty()) {
-            UserDao userDao = new UserDao("elibrary");
-            boolean updated = userDao.updateUser(uname, mail, first, last, uid);
+            boolean updated = userDao.updateUser(uname, mail, first, last, ID);
             if (updated = false) {
                 forwardToJsp = "error.jsp";
                 String error = "This user could not be updated. Please <a href=\"updateUser.jsp\">try again.</a>";
@@ -43,7 +45,7 @@ public class SaveCommand implements Command {
             } else {
                 forwardToJsp = "updateUser.jsp";
                 session.setAttribute("username", uname);
-                String msg = "Registration successful, " + uname + ", you are now logged in!";
+                String msg = "Details successfully changed";
                 session.setAttribute("msg", msg);
             }
         } else {

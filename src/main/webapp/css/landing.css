@@ -110,6 +110,10 @@ a:visited {
     margin-top: 30px;
 }
 
+.card-container{
+    margin-top: 4000px;
+    position: absolute;
+}
 .elibrary-dropdown-box .dropdown-menu .dropdown-item{
     color: rgba(255, 255, 255, 0.769);
     text-align: center;

@@ -9,8 +9,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class UserDao extends Dao implements UserDaoInterface {
 
@@ -251,7 +249,7 @@ public class UserDao extends Dao implements UserDaoInterface {
     }
 
     @Override
-        public boolean updateUser(String uname, String email, String fName, String lName, int id) {
+    public boolean updateUser(String uname, String email, String fName, String lName, int id) {
         boolean updated = false;
         Connection con = null;
         PreparedStatement ps = null;
@@ -274,10 +272,10 @@ public class UserDao extends Dao implements UserDaoInterface {
             ps.executeUpdate();
 
             // Find out what the id generated for this entry was
-            generatedKeys = ps.getGeneratedKeys();
             // If there was a result, i.e. if the entry was inserted successfully
             if (generatedKeys.next()) {
                 updated = true;
+                System.out.println(updated);
             }
         } catch (SQLException e) {
             System.err.println("\tA problem occurred during the addUser method:");

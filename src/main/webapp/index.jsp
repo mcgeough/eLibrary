@@ -1,3 +1,4 @@
+<%@page import="business.Cart"%>
 <%@page import="business.Book"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="daos.BookDao"%>
@@ -25,6 +26,8 @@
             ArrayList<Book> books = (ArrayList<Book>) bookDao.getAllBooks();
             if (u != null) {
                 String msg = (String) session.getAttribute("msg");
+                System.out.println(books.toString());
+                Cart c = new Cart(u, null);
                 if (msg != null) {
                     out.println("<div>" + msg + "</div>");
                     session.removeAttribute("msg");
@@ -105,21 +108,26 @@
 
         <p class="text-white"><b> Trending </b></p>
         <%for (Book b : books) {%>
-        <div class="slider-1 card" style="width: 13rem;">
-            <img class="card-img-top" src="css/images/harry.jpg" alt="Card image cap">
+        <form action="controller" method="post"
+              <div class="slider-1 card" style="width: 13rem;">
+            <img class="card-img-top" src="data:image/jpeg;base64,<%=b.getImage()%>"alt="Card image cap">
             <div class="card-body">
                 <h5 class="text-white card-title"><%=b.getTitle()%></h5>
-                <p class="text-white card-text"><%=b.getPrice()%></p>
+                <p class="text-white card-text">&#8364;<%=b.getPrice()%></p>
                 <div class="d-flex justify-content-between align-items-center">
                     <a href="#" class="btn btn-primary">/10</a>
-                    <a href="#" class="btn btn-primary"><i class="bi bi-cart3"></i></a>
+                    <form action="controller" method="post">
+                        <input type='hidden' name='action' value='deleteUser'/>    
+                        <input type='hidden' name='save' value='<%=u.getId()%>'/>    
+                        <td><input class="btn btn-mini btn-primary" type="submit" name='save' value="Save"/></td>
+                    </form>
                 </div>
                 <a href="userDetails.jsp"><h5 class="text-white review-count">12 Reviews</h5></a>
-
-
             </div>
-        </div>
+        </form>
+
         <%}%>
+
 
         <!-- footer -->
         <div class="container footer">

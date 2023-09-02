@@ -1,17 +1,23 @@
 package daos;
 
 import business.Book;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author mcgeo
@@ -46,6 +52,7 @@ public class BookDao extends Dao implements BookDaoInterface {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
+        Book b = null;
         List<Book> books = new ArrayList();
 
         try {
@@ -56,11 +63,41 @@ public class BookDao extends Dao implements BookDaoInterface {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                Book b = new Book(rs.getInt("id"), rs.getString("title"), rs.getString("genre"), rs.getInt("ageRating"), rs.getDouble("price"), rs.getString("description"), rs.getString("image"));
+                
+                int id = rs.getInt("id");
+                String title = rs.getString("title");
+                String genre = rs.getString("genre_id");
+                int age_rating_id = rs.getInt("age_rating_id");
+                double price = rs.getDouble("price");
+                String description = rs.getString("description");
+                Blob blob = rs.getBlob("image");
+
+                InputStream inputStream = blob.getBinaryStream();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+
+                byte[] imageBytes = outputStream.toByteArray();
+
+                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+                b = new Book();
+                b.setId(id);
+                b.setTitle(title);
+                b.setGenre(genre);
+                b.setAgeRating(age_rating_id);
+                b.setPrice(price);
+                b.setDescription(description);
+                b.setImage(base64Image);
                 books.add(b);
             }
         } catch (SQLException e) {
             System.out.println("Exception occured in the getAllBooks() method: " + e.getMessage());
+        } catch (IOException ex) {
+            System.out.println("IO exception" + ex);
         } finally {
             try {
                 if (rs != null) {
@@ -81,11 +118,11 @@ public class BookDao extends Dao implements BookDaoInterface {
     }
 
     /**
-     * Searches for a product entry matching the code supplied as a parameter.
+     * Searches for a book entry matching the code supplied as a parameter.
      *
-     * @param id The id of the Product to be found in the database.
-     * @return The {@code Product} contained in the database matching the
-     * supplied product code, or {@code null} otherwise.
+     * @param id The id of the Book to be found in the database.
+     * @return The {@code book} contained in the database matching the supplied
+     * product code, or {@code null} otherwise.
      */
     @Override
     public Book getBookById(String id) {
@@ -103,7 +140,7 @@ public class BookDao extends Dao implements BookDaoInterface {
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                b = new Book(rs.getInt("id"), rs.getString("title"), rs.getString("genre"), rs.getInt("ageRating"), rs.getDouble("price"), rs.getString("description"), rs.getString("image"));
+                b = new Book(rs.getInt("id"), rs.getString("title"), rs.getString("genre_id"), rs.getInt("age_rating_id"), rs.getDouble("price"), rs.getString("description"), rs.getString("image"));
             }
         } catch (SQLException e) {
             System.out.println("Exception occured in the getBookById() method: " + e.getMessage());
@@ -155,7 +192,7 @@ public class BookDao extends Dao implements BookDaoInterface {
         ResultSet rs = null;
         try {
             con = getConnection();
-            String query = "DELETE FROM users WHERE id = ?";
+            String query = "DELETE FROM books WHERE id = ?";
             ps = con.prepareStatement(query);
             ps.setString(1, id);
             rs = ps.executeQuery();
@@ -176,7 +213,7 @@ public class BookDao extends Dao implements BookDaoInterface {
                     freeConnection(con);
                 }
             } catch (SQLException e) {
-                System.out.println("Exception occured in the finally section of the deleteUser() method: " + e.getMessage());
+                System.out.println("Exception occured in the finally section of the deleteBook() method: " + e.getMessage());
             }
         }
         return rowDeleted;
@@ -196,7 +233,7 @@ public class BookDao extends Dao implements BookDaoInterface {
         int newId = -1;
         try {
             con = this.getConnection();
-            String query = "INSERT INTO books(title, genre, ageRating, price, description, image) VALUES (?,?,?,?,?,?)";
+            String query = "INSERT INTO books(title, genre_id, age_rating_id, price, description, image) VALUES (?,?,?,?,?,?)";
 
             // Need to get the id back, so have to tell the database to return the id it generates
             // That is why we include the Statement.RETURN_GENERATED_KEYS parameter

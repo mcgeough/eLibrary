@@ -21,6 +21,10 @@ public class Book {
     private String description;
     private String image;
 
+    public Book() {
+
+    }
+
     public Book(int id, String title, String genre, int ageRating, double price, String description, String image) {
         this.id = id;
         this.title = title;
@@ -78,10 +82,13 @@ public class Book {
         this.description = description;
     }
 
-    public String image() {
+    public String getImage() {
         return image;
     }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     @Override
     public int hashCode() {
