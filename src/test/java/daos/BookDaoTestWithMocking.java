@@ -60,7 +60,7 @@ public class BookDaoTestWithMocking {
         when(rs.getInt("ageRating")).thenReturn(b1.getAgeRating(), b2.getAgeRating(), b3.getAgeRating());
         when(rs.getDouble("price")).thenReturn(b1.getPrice(), b2.getPrice(), b3.getPrice());
         when(rs.getString("description")).thenReturn(b1.getDescription(), b2.getDescription(), b3.getDescription());
-        when(rs.getString("image")).thenReturn(b1.getBase64Image(), b2.getBase64Image(), b3.getBase64Image());
+        when(rs.getString("image")).thenReturn(b1.image(), b2.image(), b3.image());
 
         //int numProductsInTable = 3;
         // Supply the DAO with the mock connection, which has been filled with all

@@ -15,6 +15,8 @@ public interface UserDaoInterface {
     public User findUserById(int id);
 
     public int addUser(String uname, String pword, String email, String fName, String lName, String dob, int isAd);
-    
- public boolean deleteUser(String id);
+
+    public boolean deleteUser(String id);
+
+    public boolean updateUser(String uname, String email, String fName, String lName, int id);
 }

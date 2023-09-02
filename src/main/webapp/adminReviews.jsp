@@ -1,7 +1,12 @@
+<%-- 
+    Document   : adminUsers
+    Created on : 29-Aug-2023, 08:54:18
+    Author     : mcgeo
+--%>
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="daos.UserDao"%>
 <%@page import="business.User"%>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +16,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="css/adminStyle.css">
-        <link rel="stylesheet" href="css/responsive.css">
         <title>Admin Dashboard | eLibrary</title>
     </head>
     <%
@@ -21,7 +25,7 @@
             String msg = (String) session.getAttribute("msg");
             if (msg != null) {
 
-                out.println("<div>" + msg + "</div>");
+                out.println("<div class='text-white'>" + msg + "</div>");
                 session.removeAttribute("msg");
             }
             UserDao userDao = new UserDao("eLibrary");
@@ -36,7 +40,8 @@
         <div class="sidebar">
             <ul class="side-menu">
                 <li><a href="index.jsp"><i class='bx bx-store-alt'></i>Shop</a></li>
-                <li><a href="viewBooks.jsp"><i class='bx bx-message-square-dots'></i>Books</a></li>
+                <li><a href="#"><i class='bx bx-message-square-dots'></i>Books</a></li>
+                <li><a href="#"><i class='bx bx-group'></i>Users</a></li>
             </ul>
             <ul class="side-menu">
                 <li>
@@ -88,15 +93,14 @@
                             <h3>Current Users</h3>
                         </div>
                         <table>
-                            <caption>List of users</caption>
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>USERNAME</th>
-                                    <th>FIRST NAME</th>
-                                    <th>LAST NAME</th>
                                     <th>DOB</th>
                                     <th>EMAIL</th>
+                                    <th>FIRST NAME</th>
+                                    <th>LAST NAME</th>
                                     <th>ADMIN</th>
                                 </tr>
                             </thead>
@@ -106,29 +110,20 @@
                                         for (User user : users) {
                                     %>
 
-                            <div>
-                                <td style='padding-top:35px; padding-right: 20px;'>ELIB009-<%=user.getId()%></td>
-                            </div>
-                            <td><%=user.getUsername()%></td>
-                            <td><%=user.getFirstName()%></td>
-                            <td><%=user.getLastName()%></td>
-                            <td><%=user.getDob()%></td>
-                            <td><%=user.getEmail()%></td>
-                            <td><%=user.getIsAdmin()%></td>
-                            <div>
-                                <td><a class="btn btn-primary btn-sm" href="adminViewUser.jsp?detailsID=<%=user.getId()%>"/>Details</a></td>
-                                <form action="controller" method="post">
-                                    <input type='hidden' name='action' value='deleteUser'/>    
-                                    <input type='hidden' name='deleteID' value='<%=user.getId()%>'/>    
-                                    <td><input class="btn btn-mini btn-danger" type="submit" name='deleteUser' value="Delete"/></td>
-                                </form>
-
+                                    <td><p><%=user.getId()%></p></td>
+                                    <td><%=user.getUsername()%></td>
+                                    <td><%=user.getDob()%></td>
+                                    <td><%=user.getEmail()%></td>
+                                    <td><%=user.getFirstName()%></td>
+                                    <td><%=user.getLastName()%></td>
+                                    <td><%=user.getIsAdmin()%></td>
+                                    <td><button type="button" class="btn btn-primary btn-sm">View</button></td>
+                                    <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
                                 </tr>
-
                                 <%
                                     }
                                 %>
-                                </tbody>
+                            </tbody>
                         </table>
                     </div> 
 
@@ -140,13 +135,14 @@
 
         <script src="js/adminIndex.js"></script>
 
-        <%
+
         } else {
         %>
-        <div style="color: yellow;">No users added.</div>
+
         <%
             }
         %>
     </body>
 
 </html>
+

@@ -31,6 +31,9 @@ public class CommandFactory {
                 case "toggleAdmin":
                     c = new ToggleAdminCommand(request, response);
                     break;
+                case "save":
+                    c = new SaveCommand(request, response);
+                    break;
                 
                 default:
                     String error = "No such action defined for this application. Please try again.";

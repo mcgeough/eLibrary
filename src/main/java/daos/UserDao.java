@@ -249,4 +249,55 @@ public class UserDao extends Dao implements UserDaoInterface {
         }
         return rowDeleted;
     }
+
+    @Override
+        public boolean updateUser(String uname, String email, String fName, String lName, int id) {
+        boolean updated = false;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet generatedKeys = null;
+        try {
+            con = this.getConnection();
+
+            String query = "UPDATE users SET username= ? ,email= ? ,firstName= ? ,lastName= ? WHERE id =" + id + " ";
+            System.out.println(query);
+            // Need to get the id back, so have to tell the database to return the id it generates
+            // That is why we include the Statement.RETURN_GENERATED_KEYS parameter
+            ps = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            ps.setString(1, uname);
+            ps.setString(2, email);
+            ps.setString(3, fName);
+            ps.setString(4, lName);
+
+            // Because this is CHANGING the database, use the executeUpdate method
+            ps.executeUpdate();
+
+            // Find out what the id generated for this entry was
+            generatedKeys = ps.getGeneratedKeys();
+            // If there was a result, i.e. if the entry was inserted successfully
+            if (generatedKeys.next()) {
+                updated = true;
+            }
+        } catch (SQLException e) {
+            System.err.println("\tA problem occurred during the addUser method:");
+            System.err.println("\t" + e.getMessage());
+        } finally {
+            try {
+                if (generatedKeys != null) {
+                    generatedKeys.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                System.err.println("A problem occurred when closing down the updateUser method:\n" + e.getMessage());
+            }
+        }
+        return updated;
+    }
+
 }

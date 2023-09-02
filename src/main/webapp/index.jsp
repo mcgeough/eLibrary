@@ -55,7 +55,6 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" href="index.jsp">Home</a></li>
                                 <li><a class="dropdown-item" href="viewBooks.jsp">Books</a></li>
-                                <li><a class="dropdown-item" href="#">News and Popular</a></li>
                                 <li><a class="dropdown-item" href="#">My List</a></li>
                             </ul>
                         </div>
@@ -64,7 +63,6 @@
                             <section>
                                 <a href="index.jsp" style="color: #fff">Home |</a>
                                 <a href="viewBooks.jsp" style="color: #fff">Books |</a>
-                                <a href="viewBooks.jsp" style="color: #fff">New and Popular |</a>
                                 <a href="viewBooks.jsp" style="color: #fff">My List</a>
                                 <a href="userDetails.jsp"><i class="bi bi-person-square"></i></a>
                             </section>
@@ -111,8 +109,14 @@
             <img class="card-img-top" src="css/images/harry.jpg" alt="Card image cap">
             <div class="card-body">
                 <h5 class="text-white card-title"><%=b.getTitle()%></h5>
-                <p class="text-white card-text"><%=b.getPrice() %></p>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <p class="text-white card-text"><%=b.getPrice()%></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="#" class="btn btn-primary">/10</a>
+                    <a href="#" class="btn btn-primary"><i class="bi bi-cart3"></i></a>
+                </div>
+                <a href="userDetails.jsp"><h5 class="text-white review-count">12 Reviews</h5></a>
+
+
             </div>
         </div>
         <%}%>

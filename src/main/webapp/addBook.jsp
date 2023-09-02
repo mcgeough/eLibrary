@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="business.Book"%>
+<%@page import="daos.BookDao"%>
 <%@page import="business.User"%>
 <%@page import="daos.UserDao"%>
 <!doctype html>
@@ -16,22 +19,18 @@
         <%
             // Check if the user is currently logged in
             User user = (User) session.getAttribute("user");
-            UserDao userDao = new UserDao("elibrary");
-            try {
-                user = userDao.findUserById(user.getId());
-            } catch (NumberFormatException ex) {
-                System.out.println(ex);
-            }
+            BookDao bookDao = new BookDao("elibrary");
+
+            ArrayList<Book> books = (ArrayList<Book>) bookDao.getAllBooks();
 
             if (user != null) {
                 // If they are logged in, then continue
 
-                // If an id was supplied
-                if (user.getId() != -1) {
-                    try {
+                try {
 
-                        // If a user matching that name is found
-                        if (user != null) {
+                    // If a books were found
+                    if (books != null) {
+
 
         %>
         <!-- navbar -->
@@ -59,6 +58,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" href="index.jsp">Home</a></li>
                                 <li><a class="dropdown-item" href="viewBooks.jsp">Books</a></li>
+                                <li><a class="dropdown-item" href="#">News and Popular</a></li>
                                 <li><a class="dropdown-item" href="#">My List</a></li>
                             </ul>
                         </div>
@@ -67,6 +67,7 @@
                             <section>
                                 <a href="index.jsp" style="color: #fff">Home |</a>
                                 <a href="viewBooks.jsp" style="color: #fff">Books |</a>
+                                <a href="viewBooks.jsp" style="color: #fff">New and Popular |</a>
                                 <a href="viewBooks.jsp" style="color: #fff">My List</a>
                                 <a href="userDetails.jsp"><i class="bi bi-person-square"></i></a>
                             </section>
@@ -79,16 +80,15 @@
         </nav>
         <!-- navbar end -->
 
-        <h3 style="padding-top: 25px;padding-left: 25px;padding-bottom: 10px;"><%=user.getFirstName()%>'s details:</h3>
+        <h3 style="padding-top: 25px;padding-left: 25px;padding-bottom: 10px;">user ELIB009<%=user.getId()%> details:</h3>
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">USERNAME</th>
-                    <th scope="col">FIRST NAME</th>
-                    <th scope="col">LAST NAME</th>
-                    <th scope="col">DOB</th>
-                    <th scope="col">EMAIL</th>
+                    <th scope="col">TITLE</th>
+                    <th scope="col">GENRE</th>
+                    <th scope="col">AGE RATING</th>
+                    <th scope="col">PRICE</th>
                 </tr>
             </thead>
             <tbody>
@@ -124,7 +124,7 @@
                     <td><%=user.getLastName()%></td>
                     <td><%=user.getDob()%></td>
                     <td><%=user.getEmail()%></td>
-                </tr>
+                </tr><
             </tbody>
         </table>
         <%
@@ -147,13 +147,7 @@
                 session.setAttribute("errorMessage", error);
                 response.sendRedirect("error.jsp");
             }
-        } else {
         %>
-        <div>Not logged in..</div>
-        <%
-            }
-        %>
-
         <!-- Optional JavaScript; choose one of the two! -->
 
         <!-- Option 1: Bootstrap Bundle with Popper -->
