@@ -36,7 +36,7 @@
         <div class="sidebar">
             <ul class="side-menu">
                 <li><a href="index.jsp"><i class='bx bx-store-alt'></i>Shop</a></li>
-                <li><a href="viewBooks.jsp"><i class='bx bx-message-square-dots'></i>Books</a></li>
+                <li><a href="adminBooks.jsp"><i class='bx bx-message-square-dots'></i>Books</a></li>
             </ul>
             <ul class="side-menu">
                 <li>

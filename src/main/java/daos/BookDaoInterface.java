@@ -22,4 +22,6 @@ public interface BookDaoInterface {
 
     public int addBook(String title, String genre, int ageRating, double price, String description, String image);
 
+    public boolean deleteUser(String id);
+
 }

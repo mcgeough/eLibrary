@@ -1,3 +1,5 @@
+<%@page import="business.Book"%>
+<%@page import="daos.BookDao"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="daos.UserDao"%>
 <%@page import="business.User"%>
@@ -24,9 +26,9 @@
                 out.println("<div>" + msg + "</div>");
                 session.removeAttribute("msg");
             }
-            UserDao userDao = new UserDao("eLibrary");
-            ArrayList<User> users = (ArrayList<User>) userDao.findAllUsers();
-            if (!users.isEmpty())
+            BookDao bookDao = new BookDao("eLibrary");
+            ArrayList<Book> books = (ArrayList<Book>) bookDao.getAllBooks();
+            if (!books.isEmpty())
     %>
 
 
@@ -84,43 +86,39 @@
                 <div class="bottom-data">
                     <div class="orders">
                         <div class="header">
-                            <i class='bx bx-group'></i>
-                            <h3>Current Users</h3>
+                            <i class="bi bi-book"></i>
+                            <h3>Current Books</h3>
                         </div>
                         <table>
-                            <caption>List of users</caption>
+                            <caption>List of books</caption>
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>USERNAME</th>
-                                    <th>FIRST NAME</th>
-                                    <th>LAST NAME</th>
-                                    <th>DOB</th>
-                                    <th>EMAIL</th>
-                                    <th>ADMIN</th>
+                                    <th>TITLE</th>
+                                    <th>GENRE</th>
+                                    <th>AGE</th>
+                                    <th>DESCRIPTION</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <%
-                                        for (User user : users) {
+                                        for (Book book : books) {
                                     %>
 
                             <div>
-                                <td style='padding-top:35px; padding-right: 20px;'>ELIB009-<%=user.getId()%></td>
+                                <td style='padding-top:25px; padding-right: 20px;'><%=book.getId()%></td>
                             </div>
-                            <td><%=user.getUsername()%></td>
-                            <td><%=user.getFirstName()%></td>
-                            <td><%=user.getLastName()%></td>
-                            <td><%=user.getDob()%></td>
-                            <td><%=user.getEmail()%></td>
-                            <td><%=user.getIsAdmin()%></td>
+                            <td><%=book.getTitle() %></td>
+                            <td><%=book.getGenre() %></td>
+                            <td><%=book.getAgeRating() %></td>
+                            <td><%=book.getDescription() %></td>
                             <div>
-                                <td><a class="btn btn-primary btn-sm" href="adminViewUser.jsp?detailsID=<%=user.getId()%>"/>Details</a></td>
+                                <td><a class="btn btn-primary btn-sm" href="adminViewUser.jsp?detailsID=<%=book.getId()%>"/>Details</a></td>
                                 <form action="controller" method="post">
                                     <input type='hidden' name='action' value='deleteUser'/>    
-                                    <input type='hidden' name='deleteID' value='<%=user.getId()%>'/>    
-                                    <td><input class="btn btn-mini btn-danger" type="submit" name='deleteUser' value="Delete"/></td>
+                                    <input type='hidden' name='deleteID' value='<%=book.getId()%>'/>    
+                                    <td><input class="btn btn-mini btn-danger" type="submit" name='deleteBook' value="Delete"/></td>
                                 </form>
 
                                 </tr>

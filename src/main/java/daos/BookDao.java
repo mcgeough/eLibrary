@@ -286,5 +286,36 @@ public class BookDao extends Dao implements BookDaoInterface {
         }
         return newId;
     }
+    
+        /**
+     * Deletes a {@code Book} object based on information in the database.An
+     * entry in the deleted table is selected from the database and deleted.
+     *
+     * @param id
+     * @return The {@code rowDeleted} boolean variable if book is deleted or
+     * not.
+     * @see java.util.List
+     */
+    @Override
+    public boolean deleteUser(String id) {
+        boolean rowDeleted = false;
+        Connection con = null;
+        PreparedStatement ps = null;
+        try {
+            con = getConnection();
+            String query = "DELETE FROM books WHERE id = ?";
+            ps = con.prepareStatement(query);
+            ps.setString(1, id);
+            int row = ps.executeUpdate();
+
+            if (row > 0) {
+                rowDeleted = true;
+            }
+            con.close();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return rowDeleted;
+    }
 
 }

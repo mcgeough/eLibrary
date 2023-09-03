@@ -62,7 +62,6 @@
                             </section>
                         </div>
                         <div style="color: #fff">Welcome <%=u.getUsername()%> !</div>
-                        <a href="controller?action=logout" class="logout">Logout</a>
                     </section>
                     <!-- right -->
                     <section class="right d-flex align-items-center">
@@ -80,7 +79,6 @@
             <section class="register-box">
                 <h5 class="text-white"> Update Details</h5>
                 <form class="mt-10" action="controller" method="post">
-                    <input type="hidden" name="id" value="<%=u.getId()%>">
                     <div class="col-md-14 text-white">
                         <label for="exampleInputEmail1" class="form-label small-text">Username</label>
                         <input type="username" class="form-control border-0 p-0" name="username" placeholder="<%=u.getUsername()%>" required>
@@ -98,10 +96,11 @@
                         <input type="lastname" class="form-control border-0 p-0" name="lastName" placeholder="<%=u.getLastName()%>" required>
                     </div>
                     <input type='hidden' name='action' value='save'/>    
-                    <input type='hidden' name='updateID' value='<%=u.getId()%>'/>    
-                    <td><input class="btn btn-primary" type="submit" name='save' value="Save"/></td>
-
+                    <input type='hidden' name='updateID' value='<%=u.getId()%>'/> 
+                    <input type="submit" class="btn btn-primary" name='save' value="Save"/>
                 </form>
+
+
             </section>
         </div>
         <%

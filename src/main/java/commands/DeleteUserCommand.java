@@ -4,9 +4,7 @@
  */
 package commands;
 
-import Bcrypt.BCrypt;
-import business.User;
-import daos.UserDao;
+import daos.UserDao;    
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
